@@ -70,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Stack(
        children: [
          Container(
-           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
+           padding: const EdgeInsets.symmetric(vertical: 10),
            height: size.height,
            width: size.width,
            decoration: const BoxDecoration(
@@ -79,19 +79,31 @@ class _MyHomePageState extends State<MyHomePage> {
            child: SafeArea(
              child: Align(
                alignment: Alignment.topCenter,
-               child: Column(
-                 crossAxisAlignment: CrossAxisAlignment.start,
+               child: Stack(
                  children: [
                    Row(
+                     mainAxisAlignment: MainAxisAlignment.end,
                      children: [
-                       Text("Category", style: AppStyle.m12w,)
+                       Image.network(leagues.competitions[1].emblem, fit: BoxFit.fitWidth),
                      ],
                    ),
-                   SizedBox(height:12),
-                   Text("Ready to Learn ?", style: AppStyle.b32w,),
-                   SizedBox(height:4),
-                   Text("Choose your subject", style: AppStyle.r12w,),
-                 ],
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Column(
+                     crossAxisAlignment: CrossAxisAlignment.start,
+                     children: [
+                       Row(
+                         children: [
+                           Text("Category", style: AppStyle.m12w,)
+                         ],
+                       ),
+                       SizedBox(height:12),
+                       Text("Ready to Learn ?", style: AppStyle.b32w,),
+                       SizedBox(height:4),
+                       Text("Choose your subject", style: AppStyle.r12w,),
+                     ],
+                   ),
+                ),]
                ),
              ),
            ),
