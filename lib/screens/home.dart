@@ -98,7 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
                          ],
                        ),
                        SizedBox(height:12),
-                       Text("Ready to Learn ?", style: AppStyle.b32w,),
+                       Text("Ready to Lea", style: AppStyle.b32w,),
                        SizedBox(height:4),
                        Text("Choose your subject", style: AppStyle.r12w,),
                      ],
