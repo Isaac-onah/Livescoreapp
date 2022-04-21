@@ -100,7 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
                        SizedBox(height:12),
                        Text("Ready to Lea", style: AppStyle.b32w,),
                        SizedBox(height:4),
-                       Text("Choose your subjt", style: AppStyle.r12w,),
+                       Text("Choose your league", style: AppStyle.r12w,),
                      ],
                    ),
                 ),]
