@@ -100,7 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
                        SizedBox(height:12),
                        Text("ge le r", style: AppStyle.b32w,),
                        SizedBox(height:4),
-                       Text("Cor leagu", style: AppStyle.r12w,),
+                       Text("Cor leau", style: AppStyle.r12w,),
                      ],
                    ),
                 ),]
