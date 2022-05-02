@@ -94,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
                      children: [
                        Row(
                          children: [
-                           Text("Cysfdfasdffadfadsfda", style: AppStyle.m12w,)
+                           Text("Cysfdfasdffadfadsfa", style: AppStyle.m12w,)
                          ],
                        ),
                        SizedBox(height:12),
