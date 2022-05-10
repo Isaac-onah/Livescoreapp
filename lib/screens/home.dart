@@ -83,8 +83,9 @@ class _MyHomePageState extends State<MyHomePage> {
                  children: [
                    Row(
                      mainAxisAlignment: MainAxisAlignment.end,
+                     crossAxisAlignment: CrossAxisAlignment.start,
                      children: [
-                       Image.network(leagues.competitions[1].emblem, fit: BoxFit.fitWidth),
+                       Expanded(child: Image.asset("asset/bk.png", fit: BoxFit.fitWidth)),
                      ],
                    ),
                 Padding(
