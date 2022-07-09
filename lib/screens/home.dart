@@ -99,11 +99,11 @@ class _MyHomePageState extends State<MyHomePage> {
          Align(
            alignment: Alignment.bottomCenter,
            child: Container(
-             height: size.height - (size.height/5),
+             height: size.height - (size.height/4),
              width: size.width,
              padding: const EdgeInsets.symmetric(vertical: 10),
              decoration: BoxDecoration(
-               color: Colors.white, borderRadius: BorderRadius.circular(34)
+               color: Colors.white,
              ),
              child: ListBuild(),
            ),
@@ -141,35 +141,40 @@ class _MyHomePageState extends State<MyHomePage> {
                                 bottom: i.isEven ? 15 : 0),
                             child: Center(
                               child: Container(
-                                padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
+
+                                width: size.width/2.3,
+                                height: size.height/1.5,
                                 decoration: BoxDecoration(
                                     color: Colors.white,
-                                    borderRadius: BorderRadius.circular(30),
-                                  border: Border.all(color: Colors.grey.withOpacity(.49), width: 5)
+                                  border: Border.all(color: Colors.grey, width: 1)
 
                                 ),
-                                child: Container(
+                                child: Column(
+                                  children: [
+                                    Expanded(
+                                      child: Container(
+                                        padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
+                                        child:Image.network(usar.emblem, fit: BoxFit.fitWidth),
+                                      ),
+                                    ),
+                                    Container(
 
-                                  width: size.width/2.4,
-                                  height: size.height/1.5,
-                                  decoration: BoxDecoration(
-                                    image:DecorationImage(
-                                      image:  NetworkImage(usar.emblem), fit: BoxFit.fitWidth),
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(30),
+                                      padding: EdgeInsets.all(16.0),
+                                      alignment: Alignment.centerLeft,
+                                      decoration: BoxDecoration(
+                                          color: Colors.black12,
+                                          border: Border(bottom:BorderSide( color: Colors.grey, width: 2))
 
-                                  ),
-                                  child: Column(
-                                    children: [
-                                      Text("title", style: AppStyle.m12b,),
-                                      Text("Choose ", style: AppStyle.r10wt,),
-                                    ],
-                                  ),
+                                      ),
+                                      child: Text('supportingText'),
+                                    ),
+                                  ],
                                 ),
                               ),
+                  ),
                             ),
                           ),
-                        ),
+
                       ],
                     ),
                   ),
