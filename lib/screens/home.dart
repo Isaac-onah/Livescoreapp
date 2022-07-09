@@ -1,3 +1,6 @@
+import 'dart:convert';
+import 'dart:typed_data';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:soccerrank/api/classs.dart';
@@ -17,6 +20,14 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  @override
+  void initState() {
+    super.initState();
+    _loading = false;
+    getLeague();
+    // get();
+  }
 
   late bool _loading;
   late Leagues leagues;
@@ -38,24 +49,16 @@ class _MyHomePageState extends State<MyHomePage> {
     var response = await http.Response.fromStream(streamedresponse);
     if (response.statusCode == 200) {
       print(await response.body);
-    leagues = leaguesFromJson(response.body);
+      leagues = leaguesFromJson(response.body);
       print (leagues.competitions.length);
 
       setState(() {
-         _loading = false;
+        _loading = false;
       });
     } else {
       print(response.statusCode);
     }
 
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    _loading = false;
-    getLeague();
-    // get();
   }
 
 
@@ -127,33 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
                   child: InkWell(
                     onTap: () {
-                      // Navigator.of(context).push(MaterialPageRoute(
-                      //     builder: (ctx) => allCarDetail(
-                      //       year: usar.year,
-                      //       brand: usar.brand,
-                      //       model: usar.model,
-                      //       drivingtype: usar.drivingtype,
-                      //       fueltank: usar.fueltank,
-                      //       tire: usar.tire,
-                      //       bodytype: usar.bodytype,
-                      //       color: usar.color,
-                      //       enginetype: usar.enginetype,
-                      //       tonnage: usar.tonnage,
-                      //       wheelbase: usar.wheelbase,
-                      //       maxspeed: usar.maxspeed,
-                      //       maxtorque: usar.maxtorque,
-                      //       clutch: usar.clutch,
-                      //       transmissionmodel:
-                      //       usar.transmissionmodel,
-                      //       rearaxle: usar.rearaxle,
-                      //       steeringtech:
-                      //       usar.steeringtech,
-                      //       milage: usar.milage,
-                      //       price: usar.price,
-                      //       imageurl:
-                      //       "http://147.182.130.110:6001/uploads/${usar.imageurl}",
-                      //       trucknumber: usar.trucknumber,
-                      //     )));
+
                     },
                     child: Row(
                       children: [
@@ -172,11 +149,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
                                 ),
                                 child: Container(
+
                                   width: size.width/2.4,
                                   height: size.height/1.5,
                                   decoration: BoxDecoration(
                                     image:DecorationImage(
-                                      image: NetworkImage(usar.emblem), fit: BoxFit.fitWidth),
+                                      image:  NetworkImage(usar.emblem), fit: BoxFit.fitWidth),
                                       color: Colors.white,
                                       borderRadius: BorderRadius.circular(30),
 
