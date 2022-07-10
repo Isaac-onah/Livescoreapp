@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/button_view.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:soccerrank/screens/home.dart';
+import 'package:soccerrank/screens/login.dart';
 import 'package:soccerrank/style/colors.dart';
 
 void main() {
@@ -75,9 +76,13 @@ class _AuthThreePageState extends State<AuthThreePage> {
                         TextSpan(text: 'Don\'t have a google account ?  ', style: TextStyle(color: Colors.grey),),
                         TextSpan(
                             text: 'Sign Up',
-                            style: TextStyle(color: AppColors.purple),
+                            style: TextStyle(color: AppColors.purple, fontWeight: FontWeight.bold),
                             recognizer: TapGestureRecognizer()
                               ..onTap = () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => LoginPage()));
                               }),
                       ],
                     ),
