@@ -2,7 +2,9 @@ import 'dart:ui';
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:soccerrank/screens/home.dart';
 import 'dart:core';
 
 import 'package:soccerrank/style/colors.dart';
@@ -45,7 +47,8 @@ class _LoginPageState extends State<LoginPage> {
               child: Container(
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                  color: Colors.blue,
+                  color: AppColors.purple,
+                  borderRadius: BorderRadius.all(Radius.circular(8))
                 ),
                 child: FlatButton(
                     onPressed: () {
@@ -115,60 +118,43 @@ class _LoginPageState extends State<LoginPage> {
     return Column(
       children: <Widget>[
         Padding(
-          padding: EdgeInsets.symmetric(vertical: 10),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text('Email Address',
-                  style: GoogleFonts.poppins(
-                      textStyle: TextStyle(
-                        color: AppColors.purple,
-                        fontSize: 11,
-                        fontWeight: FontWeight.w600,
-                      )),
-                  textAlign: TextAlign.start),
-              TextFormField(
-                cursorColor: Color(0xFF44A8FF),
-                style: TextStyle(color: Colors.white, fontFamily: 'SFUIDisplay'),
-                decoration: InputDecoration(
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                    borderSide: BorderSide(
-                      color: Color(0xFF44A8FF),
-                    ),
-                  ),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
-                      width: 0,
-                      style: BorderStyle.none,
-                    ),
-                  ),
-                  fillColor: Color(0xFF303562),
-                  filled: true,
-                  labelText: 'Email Address',
-                  prefixIcon: Icon(
-                    Icons.account_circle,
-                    color: Color(0xFF0484d7),
-                  ),
-                  labelStyle: GoogleFonts.poppins(
-                    textStyle: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.normal,
-                      fontSize: 12,
-                    ),
+          padding: EdgeInsets.symmetric(vertical: 13),
+          child: SizedBox(height: 50,
+            child: TextFormField(
+              cursorColor: AppColors.purple,
+              style: TextStyle(color: AppColors.purple, fontFamily: 'SFUIDisplay'),
+              decoration: InputDecoration(
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                  borderSide: BorderSide(
+                    color: AppColors.purple,
                   ),
                 ),
-                validator: validateEmail,
-                onSaved: (String? val) {
-                  email = val!;
-                },
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  borderSide: BorderSide(
+                    width: 1,
+                    style: BorderStyle.none,
+                  ),
+                ),
+                labelText: 'Email Address',
+                labelStyle: GoogleFonts.poppins(
+                  textStyle: TextStyle(
+                    color: AppColors.purple,
+                    fontWeight: FontWeight.normal,
+                    fontSize: 12,
+                  ),
+                ),
               ),
-            ],
+              validator: validateEmail,
+              onSaved: (String? val) {
+                email = val!;
+              },
+            ),
           ),
         ),
         Padding(
-          padding: EdgeInsets.symmetric(vertical: 10),
+          padding: EdgeInsets.symmetric(vertical: 13),
           child: SizedBox(
             height: 50,
             child: TextFormField(
@@ -205,7 +191,7 @@ class _LoginPageState extends State<LoginPage> {
           ),
         ),
         Padding(
-          padding: EdgeInsets.symmetric(vertical: 10),
+          padding: EdgeInsets.symmetric(vertical: 13),
           child: SizedBox(
             height: 50,
             child: TextFormField(
@@ -240,7 +226,6 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 labelText: 'Password',
-                filled: true,
                 labelStyle: GoogleFonts.poppins(
                   textStyle: TextStyle(
                     color: AppColors.purple,
@@ -276,7 +261,7 @@ class _LoginPageState extends State<LoginPage> {
                     key: _key,
                     child: Column(
                       children: <Widget>[
-                        SizedBox(height: 50),
+                        SizedBox(height: 90),
                         Column(
                           children: [
                             Row(
@@ -304,7 +289,7 @@ class _LoginPageState extends State<LoginPage> {
                               ],
                             ),
                             SizedBox(
-                              height: 5,
+                              height: 40,
                             ),
                             _emailPasswordWidget(),
                             SizedBox(height: 5),
@@ -335,6 +320,47 @@ class _LoginPageState extends State<LoginPage> {
                             SizedBox(height: 30),
                             _submitButton(),
                             SizedBox(height: 20),
+                            SignInButton(
+                              Buttons.Google,
+                              elevation: 0,
+                              padding: EdgeInsets.all(8.0),
+                              text: "Google",
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8.0),
+
+
+                              ),
+                              onPressed: () {
+                                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MyHomePage(title: "hello",)));
+                              },
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 8.0,vertical: 15),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  RichText(
+                                    text: TextSpan(
+                                      children: <TextSpan>[
+                                        TextSpan(text: 'Don\'t have a google account ?  ', style: TextStyle(color: Colors.grey),),
+                                        TextSpan(
+                                            text: 'Sign Up',
+                                            style: TextStyle(color: AppColors.purple, fontWeight: FontWeight.bold),
+                                            recognizer: TapGestureRecognizer()
+                                              ..onTap = () {
+                                                Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                        builder: (context) => LoginPage()));
+                                              }),
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+
+                            SizedBox(height: 20,)
                           ],
                         ),
                       ],
