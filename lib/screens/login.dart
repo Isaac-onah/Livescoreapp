@@ -39,44 +39,42 @@ class _LoginPageState extends State<LoginPage> {
   Widget _submitButton() {
     return Container(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: <Widget>[
-            Padding(
-              padding: EdgeInsets.all(1.0),
-              child: Container(
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  color: AppColors.purple,
-                  borderRadius: BorderRadius.all(Radius.circular(8))
-                ),
-                child: FlatButton(
-                    onPressed: () {
-                      if (_key.currentState!.validate()) {
-                        // No any error in validation
-                        _key.currentState!.save();
-
-                      } else {
-                        // validation error
-                        setState(() {
-                          _validate = true;
-                        });
-                      }
-                    },
-                    child: Text(
-                      'Login',
-                      style: TextStyle(color: Colors.white),
-                    )),
-              ),
-            )
-          ],
-        ));
+      mainAxisAlignment: MainAxisAlignment.end,
+      crossAxisAlignment: CrossAxisAlignment.end,
+      children: <Widget>[
+        Padding(
+          padding: EdgeInsets.all(1.0),
+          child: Container(
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+                color: AppColors.purple,
+                borderRadius: BorderRadius.all(Radius.circular(8))),
+            child: FlatButton(
+                onPressed: () {
+                  if (_key.currentState!.validate()) {
+                    // No any error in validation
+                    _key.currentState!.save();
+                  } else {
+                    // validation error
+                    setState(() {
+                      _validate = true;
+                    });
+                  }
+                },
+                child: Text(
+                  'Login',
+                  style: TextStyle(color: Colors.white),
+                )),
+          ),
+        )
+      ],
+    ));
   }
 
   Widget _createAccountLabel() {
     TextStyle defaultStyle = TextStyle(
         color: Colors.grey, fontSize: 13.0, fontWeight: FontWeight.w600);
-    TextStyle linkStyle = TextStyle(color: Colors.blue);
+    TextStyle linkStyle = TextStyle(color: AppColors.purple);
     return InkWell(
       child: Container(
         padding: EdgeInsets.symmetric(vertical: 8),
@@ -85,15 +83,15 @@ class _LoginPageState extends State<LoginPage> {
           children: [
             Expanded(
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   RichText(
                     text: TextSpan(
                       style: GoogleFonts.poppins(textStyle: defaultStyle),
                       children: <TextSpan>[
-                        TextSpan(text: 'Don\'t have an account ?  '),
+                        TextSpan(text: 'I agree to '),
                         TextSpan(
-                            text: 'Sign Up',
+                            text: 'Terms and Conditions',
                             style: GoogleFonts.poppins(textStyle: linkStyle),
                             recognizer: TapGestureRecognizer()
                               ..onTap = () {
@@ -114,15 +112,47 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
+  Widget _signInButton() {
+    return Container(
+        child: OutlineButton(
+            splashColor: Colors.grey,
+            onPressed: () {},
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+            highlightElevation: 0,
+            borderSide: BorderSide(color: Colors.grey),
+            child: Padding(
+                padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+                child: Column(children: <Widget>[
+                  Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Image(
+                            image: AssetImage("asset/google_logo.png"),
+                            height: 35.0),
+                        Padding(
+                            padding: const EdgeInsets.only(left: 10),
+                            child: Text('Sign in with Google',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.grey,
+                                )))
+                      ])
+                ]))));
+  }
+
   Widget _emailPasswordWidget() {
     return Column(
       children: <Widget>[
         Padding(
           padding: EdgeInsets.symmetric(vertical: 13),
-          child: SizedBox(height: 50,
+          child: SizedBox(
+            height: 50,
             child: TextFormField(
               cursorColor: AppColors.purple,
-              style: TextStyle(color: AppColors.purple, fontFamily: 'SFUIDisplay'),
+              style:
+                  TextStyle(color: AppColors.purple, fontFamily: 'SFUIDisplay'),
               decoration: InputDecoration(
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(10.0)),
@@ -159,7 +189,8 @@ class _LoginPageState extends State<LoginPage> {
             height: 50,
             child: TextFormField(
               cursorColor: AppColors.purple,
-              style: TextStyle(color:AppColors.purple, fontFamily: 'SFUIDisplay'),
+              style:
+                  TextStyle(color: AppColors.purple, fontFamily: 'SFUIDisplay'),
               decoration: InputDecoration(
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(10.0)),
@@ -197,7 +228,8 @@ class _LoginPageState extends State<LoginPage> {
             child: TextFormField(
               obscureText: !_passwordVisible,
               cursorColor: AppColors.purple,
-              style: TextStyle(color: AppColors.purple, fontFamily: 'SFUIDisplay'),
+              style:
+                  TextStyle(color: AppColors.purple, fontFamily: 'SFUIDisplay'),
               decoration: InputDecoration(
                 suffixIcon: IconButton(
                   icon: Icon(
@@ -269,22 +301,23 @@ class _LoginPageState extends State<LoginPage> {
                                 Text('Create Account',
                                     style: GoogleFonts.poppins(
                                         textStyle: TextStyle(
-                                          color: AppColors.purple,
-                                          letterSpacing: 1,
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.w500,
-                                        )),
+                                      color: AppColors.purple,
+                                      letterSpacing: 1,
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w500,
+                                    )),
                                     textAlign: TextAlign.start),
                               ],
                             ),
                             Row(
                               children: [
-                                Text('Create accouunt to view latest on your favourite league',
+                                Text(
+                                    'Create accouunt to view latest on your favourite league',
                                     style: GoogleFonts.poppins(
                                         textStyle: TextStyle(
-                                          color: Colors.grey,
-                                          fontSize: 10,
-                                        )),
+                                      color: Colors.grey,
+                                      fontSize: 10,
+                                    )),
                                     textAlign: TextAlign.start),
                               ],
                             ),
@@ -292,66 +325,70 @@ class _LoginPageState extends State<LoginPage> {
                               height: 40,
                             ),
                             _emailPasswordWidget(),
-                            SizedBox(height: 5),
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                InkWell(
-                                  onTap: () {
-                                    // Navigator.push(
-                                    //     context,
-                                    //     MaterialPageRoute(
-                                    //         builder: (context) =>
-                                    //             passreset()));
-                                  },
-                                  child: Text('Forgot Password?',
-                                      style: GoogleFonts.poppins(
-                                          textStyle: TextStyle(
-                                            color: Color(0xFF44A8FF),
-                                            letterSpacing: 1,
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.w400,
-                                          )),
-                                      textAlign: TextAlign.end),
+                            _createAccountLabel(),
+                            _submitButton(),
+                            SizedBox(
+                              height: 70,
+                            ),
+                            Container(
+                                child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Expanded(
+                                  child: Divider(
+                                    thickness: 0.5,
+                                    color: Colors.black,
+                                    endIndent: 20,
+                                  ),
+                                ),
+                                Text(
+                                  'Or Login with',
+                                  style: TextStyle(
+                                      color: Colors.grey,
+                                      fontFamily: 'Quicksand',
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12.0),
+                                ),
+                                Expanded(
+                                  child: Divider(
+                                    thickness: 0.5,
+                                    color: Colors.black,
+                                    indent: 20,
+                                  ),
                                 ),
                               ],
-                            ),
+                            )),
                             SizedBox(height: 30),
-                            _submitButton(),
-                            SizedBox(height: 20),
-                            SignInButton(
-                              Buttons.Google,
-                              elevation: 0,
-                              padding: EdgeInsets.all(8.0),
-                              text: "Google",
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8.0),
-
-
-                              ),
-                              onPressed: () {
-                                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MyHomePage(title: "hello",)));
-                              },
+                            _signInButton(),
+                            SizedBox(
+                              height: 70,
                             ),
                             Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 8.0,vertical: 15),
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 8.0, vertical: 15),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
                                   RichText(
                                     text: TextSpan(
                                       children: <TextSpan>[
-                                        TextSpan(text: 'Don\'t have a google account ?  ', style: TextStyle(color: Colors.grey),),
+                                        TextSpan(
+                                          text:
+                                              'Don\'t have a google account ?  ',
+                                          style: TextStyle(color: Colors.grey),
+                                        ),
                                         TextSpan(
                                             text: 'Sign Up',
-                                            style: TextStyle(color: AppColors.purple, fontWeight: FontWeight.bold),
+                                            style: TextStyle(
+                                                color: AppColors.purple,
+                                                fontWeight: FontWeight.bold),
                                             recognizer: TapGestureRecognizer()
                                               ..onTap = () {
                                                 Navigator.push(
                                                     context,
                                                     MaterialPageRoute(
-                                                        builder: (context) => LoginPage()));
+                                                        builder: (context) =>
+                                                            LoginPage()));
                                               }),
                                       ],
                                     ),
@@ -359,8 +396,9 @@ class _LoginPageState extends State<LoginPage> {
                                 ],
                               ),
                             ),
-
-                            SizedBox(height: 20,)
+                            SizedBox(
+                              height: 20,
+                            )
                           ],
                         ),
                       ],
@@ -392,6 +430,7 @@ class _LoginPageState extends State<LoginPage> {
       return null;
   }
 }
+
 class CustomDialog extends StatelessWidget {
   final String title, description;
 
