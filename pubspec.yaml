@@ -38,6 +38,7 @@ dependencies:
   jwt_decoder:
   intl:
   flutter_svg_provider:
+  flutter_signin_button:
 
 dev_dependencies:
   flutter_native_splash: any
