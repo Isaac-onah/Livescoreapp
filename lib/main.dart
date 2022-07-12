@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/button_view.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:soccerrank/screens/home.dart';
-import 'package:soccerrank/screens/login.dart';
+import 'package:soccerrank/screens/signup.dart';
 import 'package:soccerrank/style/colors.dart';
 
 void main() {
@@ -39,6 +39,36 @@ class _AuthThreePageState extends State<AuthThreePage> {
     super.initState();
   }
 
+  Widget _signInButton() {
+    return Container(
+        child: OutlineButton(
+            splashColor: Colors.grey,
+            onPressed: () {},
+            shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            highlightElevation: 0,
+            borderSide: BorderSide(color: Colors.grey),
+            child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal:10, vertical: 8),
+                child: Column(children: <Widget>[
+                  Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Image(
+                            image: AssetImage("asset/google_logo.png"),
+                            height: 30.0),
+                        Padding(
+                            padding: const EdgeInsets.only(left: 10),
+                            child: Text('Google',
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  color: Colors.grey,
+                                )))
+                      ])
+                ]))));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,17 +84,35 @@ class _AuthThreePageState extends State<AuthThreePage> {
                 child: Image.asset("asset/bak.png"),
               ),
             ),
-            SignInButton(
-              Buttons.Google,
-              padding: EdgeInsets.all(8.0),
-              text: "Continue with Google",
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(50.0),
-              ),
-              onPressed: () {
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MyHomePage(title: "hello",)));
-              },
-            ),
+            Container(
+                child: OutlineButton(
+                    splashColor: Colors.grey,
+                    onPressed: () {
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MyHomePage(title: "hello",)));
+                    },
+                    shape:
+                    RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                    highlightElevation: 0,
+                    borderSide: BorderSide(color: Colors.grey),
+                    child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal:10, vertical: 8),
+                        child: Column(children: <Widget>[
+                          Row(
+                              mainAxisSize: MainAxisSize.min,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Image(
+                                    image: AssetImage("asset/google_logo.png"),
+                                    height: 25.0),
+                                Padding(
+                                    padding: const EdgeInsets.only(left: 10),
+                                    child: Text('Google Login',
+                                        style: TextStyle(
+                                          fontSize: 15,
+                                          color: Colors.grey,
+                                        )))
+                              ])
+                        ])))),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0,vertical: 15),
               child: Row(

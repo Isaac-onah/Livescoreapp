@@ -2,21 +2,20 @@ import 'dart:ui';
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:soccerrank/screens/home.dart';
+import 'package:soccerrank/screens/signup.dart';
 import 'dart:core';
 
 import 'package:soccerrank/style/colors.dart';
 
-class LoginPage extends StatefulWidget {
-  LoginPage({Key? key}) : super(key: key);
+class Loginn extends StatefulWidget {
+  Loginn({Key? key}) : super(key: key);
 
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _LoginnState createState() => _LoginnState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _LoginnState extends State<Loginn> {
   GlobalKey<FormState> _key = new GlobalKey<FormState>();
 
   late String secreet;
@@ -39,36 +38,36 @@ class _LoginPageState extends State<LoginPage> {
   Widget _submitButton() {
     return Container(
         child: Column(
-      mainAxisAlignment: MainAxisAlignment.end,
-      crossAxisAlignment: CrossAxisAlignment.end,
-      children: <Widget>[
-        Padding(
-          padding: EdgeInsets.all(1.0),
-          child: Container(
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-                color: AppColors.purple,
-                borderRadius: BorderRadius.all(Radius.circular(8))),
-            child: FlatButton(
-                onPressed: () {
-                  if (_key.currentState!.validate()) {
-                    // No any error in validation
-                    _key.currentState!.save();
-                  } else {
-                    // validation error
-                    setState(() {
-                      _validate = true;
-                    });
-                  }
-                },
-                child: Text(
-                  'Login',
-                  style: TextStyle(color: Colors.white),
-                )),
-          ),
-        )
-      ],
-    ));
+          mainAxisAlignment: MainAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: <Widget>[
+            Padding(
+              padding: EdgeInsets.all(1.0),
+              child: Container(
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                    color: AppColors.purple,
+                    borderRadius: BorderRadius.all(Radius.circular(8))),
+                child: FlatButton(
+                    onPressed: () {
+                      if (_key.currentState!.validate()) {
+                        // No any error in validation
+                        _key.currentState!.save();
+                      } else {
+                        // validation error
+                        setState(() {
+                          _validate = true;
+                        });
+                      }
+                    },
+                    child: Text(
+                      'Login',
+                      style: TextStyle(color: Colors.white),
+                    )),
+              ),
+            )
+          ],
+        ));
   }
 
   Widget _createAccountLabel() {
@@ -118,11 +117,11 @@ class _LoginPageState extends State<LoginPage> {
             splashColor: Colors.grey,
             onPressed: () {},
             shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
             highlightElevation: 0,
             borderSide: BorderSide(color: Colors.grey),
             child: Padding(
-                padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+                padding: const EdgeInsets.symmetric(horizontal:10, vertical: 8),
                 child: Column(children: <Widget>[
                   Row(
                       mainAxisSize: MainAxisSize.min,
@@ -130,12 +129,12 @@ class _LoginPageState extends State<LoginPage> {
                       children: <Widget>[
                         Image(
                             image: AssetImage("asset/google_logo.png"),
-                            height: 35.0),
+                            height: 30.0),
                         Padding(
                             padding: const EdgeInsets.only(left: 10),
-                            child: Text('Sign in with Google',
+                            child: Text('Google',
                                 style: TextStyle(
-                                  fontSize: 20,
+                                  fontSize: 15,
                                   color: Colors.grey,
                                 )))
                       ])
@@ -152,7 +151,7 @@ class _LoginPageState extends State<LoginPage> {
             child: TextFormField(
               cursorColor: AppColors.purple,
               style:
-                  TextStyle(color: AppColors.purple, fontFamily: 'SFUIDisplay'),
+              TextStyle(color: AppColors.purple, fontFamily: 'SFUIDisplay'),
               decoration: InputDecoration(
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(10.0)),
@@ -188,48 +187,10 @@ class _LoginPageState extends State<LoginPage> {
           child: SizedBox(
             height: 50,
             child: TextFormField(
-              cursorColor: AppColors.purple,
-              style:
-                  TextStyle(color: AppColors.purple, fontFamily: 'SFUIDisplay'),
-              decoration: InputDecoration(
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                  borderSide: BorderSide(
-                    color: AppColors.purple,
-                  ),
-                ),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8),
-                  borderSide: BorderSide(
-                    width: 1,
-                    style: BorderStyle.none,
-                  ),
-                ),
-                labelText: 'Phone Number',
-                labelStyle: GoogleFonts.poppins(
-                  textStyle: TextStyle(
-                    color: AppColors.purple,
-                    fontWeight: FontWeight.normal,
-                    fontSize: 12,
-                  ),
-                ),
-              ),
-              validator: validateEmail,
-              onSaved: (String? val) {
-                email = val!;
-              },
-            ),
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(vertical: 13),
-          child: SizedBox(
-            height: 50,
-            child: TextFormField(
               obscureText: !_passwordVisible,
               cursorColor: AppColors.purple,
               style:
-                  TextStyle(color: AppColors.purple, fontFamily: 'SFUIDisplay'),
+              TextStyle(color: AppColors.purple, fontFamily: 'SFUIDisplay'),
               decoration: InputDecoration(
                 suffixIcon: IconButton(
                   icon: Icon(
@@ -298,26 +259,25 @@ class _LoginPageState extends State<LoginPage> {
                           children: [
                             Row(
                               children: [
-                                Text('Create Account',
+                                Text('Hello! Welcome back!',
                                     style: GoogleFonts.poppins(
                                         textStyle: TextStyle(
-                                      color: AppColors.purple,
-                                      letterSpacing: 1,
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.w500,
-                                    )),
+                                          color: AppColors.purple,
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.w500,
+                                        )),
                                     textAlign: TextAlign.start),
                               ],
                             ),
                             Row(
                               children: [
                                 Text(
-                                    'Create accouunt to view latest on your favourite league',
+                                    'Catch up with the latest on your favourite league',
                                     style: GoogleFonts.poppins(
                                         textStyle: TextStyle(
-                                      color: Colors.grey,
-                                      fontSize: 10,
-                                    )),
+                                          color: Colors.grey,
+                                          fontSize: 10,
+                                        )),
                                     textAlign: TextAlign.start),
                               ],
                             ),
@@ -332,32 +292,32 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                             Container(
                                 child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: <Widget>[
-                                Expanded(
-                                  child: Divider(
-                                    thickness: 0.5,
-                                    color: Colors.black,
-                                    endIndent: 20,
-                                  ),
-                                ),
-                                Text(
-                                  'Or Login with',
-                                  style: TextStyle(
-                                      color: Colors.grey,
-                                      fontFamily: 'Quicksand',
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 12.0),
-                                ),
-                                Expanded(
-                                  child: Divider(
-                                    thickness: 0.5,
-                                    color: Colors.black,
-                                    indent: 20,
-                                  ),
-                                ),
-                              ],
-                            )),
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: <Widget>[
+                                    Expanded(
+                                      child: Divider(
+                                        thickness: 0.5,
+                                        color: Colors.black,
+                                        endIndent: 20,
+                                      ),
+                                    ),
+                                    Text(
+                                      'Or Login with',
+                                      style: TextStyle(
+                                          color: Colors.grey,
+                                          fontFamily: 'Quicksand',
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 12.0),
+                                    ),
+                                    Expanded(
+                                      child: Divider(
+                                        thickness: 0.5,
+                                        color: Colors.black,
+                                        indent: 20,
+                                      ),
+                                    ),
+                                  ],
+                                )),
                             SizedBox(height: 30),
                             _signInButton(),
                             SizedBox(
@@ -374,7 +334,7 @@ class _LoginPageState extends State<LoginPage> {
                                       children: <TextSpan>[
                                         TextSpan(
                                           text:
-                                              'Don\'t have a google account ?  ',
+                                          'Don\'t have an account ?  ',
                                           style: TextStyle(color: Colors.grey),
                                         ),
                                         TextSpan(
