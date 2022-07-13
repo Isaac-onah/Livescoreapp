@@ -24,42 +24,42 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
-    _loading = false;
-    getLeague();
+    // _loading = false;
+    // getLeague();
     // get();
   }
 
-  late bool _loading;
-  late Leagues leagues;
+  // late bool _loading;
+  // late Leagues leagues;
 
-  Future getLeague() async{
-    setState(() {
-      _loading = true;
-    });
-    var headers = {
-      'X-Auth-Token': 'ed2bac5181fc4d75aa46cddca9c3acbe',
-      'x-rapidapi-host': 'v3.football.api-sports.io'
-    };
-    var request = http.Request('GET', Uri.parse('https://api.football-data.org/v4/competitions/'));
-
-    request.headers.addAll(headers);
-
-
-    http.StreamedResponse streamedresponse = await request.send();
-    var response = await http.Response.fromStream(streamedresponse);
-    if (response.statusCode == 200) {
-      print(await response.body);
-      leagues = leaguesFromJson(response.body);
-      print (leagues.competitions.length);
-
-      setState(() {
-        _loading = false;
-      });
-    } else {
-      print(response.statusCode);
-    }
-
-  }
+  // Future getLeague() async{
+  //   setState(() {
+  //     _loading = true;
+  //   });
+  //   var headers = {
+  //     'X-Auth-Token': 'ed2bac5181fc4d75aa46cddca9c3acbe',
+  //     'x-rapidapi-host': 'v3.football.api-sports.io'
+  //   };
+  //   var request = http.Request('GET', Uri.parse('https://api.football-data.org/v4/competitions/'));
+  //
+  //   request.headers.addAll(headers);
+  //
+  //
+  //   http.StreamedResponse streamedresponse = await request.send();
+  //   var response = await http.Response.fromStream(streamedresponse);
+  //   if (response.statusCode == 200) {
+  //     print(await response.body);
+  //     leagues = leaguesFromJson(response.body);
+  //     print (leagues.competitions.length);
+  //
+  //     setState(() {
+  //       _loading = false;
+  //     });
+  //   } else {
+  //     print(response.statusCode);
+  //   }
+  //
+  // }
 
 
   @override
@@ -129,17 +129,15 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget ListBuild() {
     Size size = MediaQuery.of(context).size;
-    int count = null == leagues.competitions.length ? 0 : leagues.competitions.length;
+    // int count =leagues.competitions.length == null ? 0 : leagues.competitions.length;
       return Container(
         child:Container(
             height: MediaQuery.of(context).size.height * 0.50,
-            child: GridView.builder(
+            child: GridView(
               physics: ScrollPhysics(),
               shrinkWrap: true,
-              itemCount: null == count ? 0 : count,
-              itemBuilder: (ctx, i) {
-                Competition usar = leagues.competitions[i];
-                return Padding(
+              children: [
+                Padding(
                   padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
                   child: InkWell(
                     onTap: () {
@@ -150,8 +148,8 @@ class _MyHomePageState extends State<MyHomePage> {
                         Expanded(
                           child: Container(
                             margin: EdgeInsets.only(
-                                top: i.isEven ? 0 : 18,
-                                bottom: i.isEven ? 15 : 0),
+                                top:18,
+                                bottom:0),
                             child: Center(
                               child: Container(
 
@@ -159,7 +157,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 height: size.height/1.5,
                                 decoration: BoxDecoration(
                                     color: Colors.white,
-                                  border: Border.all(color: Colors.grey, width: 1)
+                                    border: Border.all(color: Colors.grey, width: 1)
 
                                 ),
                                 child: Column(
@@ -167,7 +165,65 @@ class _MyHomePageState extends State<MyHomePage> {
                                     Expanded(
                                       child: Container(
                                         padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
-                                        child:Image.network(usar.emblem, fit: BoxFit.fitWidth),
+                                        child:Image.asset("asset/pl.png", fit: BoxFit.fitWidth),
+                                      ),
+                                    ),
+                                    Container(
+
+                                      padding: EdgeInsets.all(16.0),
+                                      alignment: Alignment.centerLeft,
+                                      decoration: BoxDecoration(
+                                          color: Colors.black12,
+                                          border: Border(bottom:BorderSide( color: Colors.grey, width: 2))
+
+                                      ),
+                                      child: Column(
+                                        children: [
+                                          Text('Premier League'),
+                                          Text('England'),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+
+                      ],
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
+                  child: InkWell(
+                    onTap: () {
+
+                    },
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Container(
+                            margin: EdgeInsets.only(
+                                top:18,
+                                bottom:0),
+                            child: Center(
+                              child: Container(
+
+                                width: size.width/2.3,
+                                height: size.height/1.5,
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    border: Border.all(color: Colors.grey, width: 1)
+
+                                ),
+                                child: Column(
+                                  children: [
+                                    Expanded(
+                                      child: Container(
+                                        padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
+                                        child:Image.network("usar.emblem", fit: BoxFit.fitWidth),
                                       ),
                                     ),
                                     Container(
@@ -184,15 +240,227 @@ class _MyHomePageState extends State<MyHomePage> {
                                   ],
                                 ),
                               ),
-                  ),
                             ),
                           ),
+                        ),
 
                       ],
                     ),
                   ),
-                );
-              },
+                ),
+                Padding(
+                  padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
+                  child: InkWell(
+                    onTap: () {
+
+                    },
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Container(
+                            margin: EdgeInsets.only(
+                                top:18,
+                                bottom:0),
+                            child: Center(
+                              child: Container(
+
+                                width: size.width/2.3,
+                                height: size.height/1.5,
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    border: Border.all(color: Colors.grey, width: 1)
+
+                                ),
+                                child: Column(
+                                  children: [
+                                    Expanded(
+                                      child: Container(
+                                        padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
+                                        child:Image.network("usar.emblem", fit: BoxFit.fitWidth),
+                                      ),
+                                    ),
+                                    Container(
+
+                                      padding: EdgeInsets.all(16.0),
+                                      alignment: Alignment.centerLeft,
+                                      decoration: BoxDecoration(
+                                          color: Colors.black12,
+                                          border: Border(bottom:BorderSide( color: Colors.grey, width: 2))
+
+                                      ),
+                                      child: Text('supportingText'),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+
+                      ],
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
+                  child: InkWell(
+                    onTap: () {
+
+                    },
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Container(
+                            margin: EdgeInsets.only(
+                                top:18,
+                                bottom:0),
+                            child: Center(
+                              child: Container(
+
+                                width: size.width/2.3,
+                                height: size.height/1.5,
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    border: Border.all(color: Colors.grey, width: 1)
+
+                                ),
+                                child: Column(
+                                  children: [
+                                    Expanded(
+                                      child: Container(
+                                        padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
+                                        child:Image.network("usar.emblem", fit: BoxFit.fitWidth),
+                                      ),
+                                    ),
+                                    Container(
+
+                                      padding: EdgeInsets.all(16.0),
+                                      alignment: Alignment.centerLeft,
+                                      decoration: BoxDecoration(
+                                          color: Colors.black12,
+                                          border: Border(bottom:BorderSide( color: Colors.grey, width: 2))
+
+                                      ),
+                                      child: Text('supportingText'),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+
+                      ],
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
+                  child: InkWell(
+                    onTap: () {
+
+                    },
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Container(
+                            margin: EdgeInsets.only(
+                                top:18,
+                                bottom:0),
+                            child: Center(
+                              child: Container(
+
+                                width: size.width/2.3,
+                                height: size.height/1.5,
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    border: Border.all(color: Colors.grey, width: 1)
+
+                                ),
+                                child: Column(
+                                  children: [
+                                    Expanded(
+                                      child: Container(
+                                        padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
+                                        child:Image.network("usar.emblem", fit: BoxFit.fitWidth),
+                                      ),
+                                    ),
+                                    Container(
+
+                                      padding: EdgeInsets.all(16.0),
+                                      alignment: Alignment.centerLeft,
+                                      decoration: BoxDecoration(
+                                          color: Colors.black12,
+                                          border: Border(bottom:BorderSide( color: Colors.grey, width: 2))
+
+                                      ),
+                                      child: Text('supportingText'),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+
+                      ],
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
+                  child: InkWell(
+                    onTap: () {
+
+                    },
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Container(
+                            margin: EdgeInsets.only(
+                                top:18,
+                                bottom:0),
+                            child: Center(
+                              child: Container(
+
+                                width: size.width/2.3,
+                                height: size.height/1.5,
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    border: Border.all(color: Colors.grey, width: 1)
+
+                                ),
+                                child: Column(
+                                  children: [
+                                    Expanded(
+                                      child: Container(
+                                        padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
+                                        child:Image.network("usar.emblem", fit: BoxFit.fitWidth),
+                                      ),
+                                    ),
+                                    Container(
+
+                                      padding: EdgeInsets.all(16.0),
+                                      alignment: Alignment.centerLeft,
+                                      decoration: BoxDecoration(
+                                          color: Colors.black12,
+                                          border: Border(bottom:BorderSide( color: Colors.grey, width: 2))
+
+                                      ),
+                                      child: Text('supportingText'),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+
+                      ],
+                    ),
+                  ),
+                ),
+              ],
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 childAspectRatio: MediaQuery.of(context).size.width /
