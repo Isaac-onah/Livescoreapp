@@ -3,6 +3,7 @@ import 'dart:typed_data';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:soccerrank/api/classs.dart';
 import 'package:soccerrank/screens/product_card.dart';
 import 'package:soccerrank/style/colors.dart';
@@ -95,13 +96,30 @@ class _MyHomePageState extends State<MyHomePage> {
                      children: [
                        Row(
                          children: [
-                           Text("Cysfdfafa", style: AppStyle.m12w,)
+                           Text("Hello! Isaac",
+                      style: GoogleFonts.poppins(
+                      textStyle: TextStyle(
+                        color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.normal
+                  )),)
                          ],
                        ),
-                       SizedBox(height:12),
-                       Text("ge le r", style: AppStyle.b32w,),
+                       Text("Welcome back!",
+                         style: GoogleFonts.poppins(
+                             textStyle: TextStyle(
+                                 color: Colors.white,
+                                 fontSize: 30,
+                                 fontWeight: FontWeight.normal
+                             )),),
                        SizedBox(height:4),
-                       Text("Cr leu", style: AppStyle.r12w,),
+                       Text("Catch up the latest from your favorite league and club",
+                         style: GoogleFonts.poppins(
+                             textStyle: TextStyle(
+                                 color: Colors.white,
+                                 fontSize: 11,
+                                 fontWeight: FontWeight.normal
+                             )),),
                      ],
                    ),
                 ),]
@@ -129,381 +147,438 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget ListBuild() {
     Size size = MediaQuery.of(context).size;
-    // int count =leagues.competitions.length == null ? 0 : leagues.competitions.length;
       return Container(
-        child:Container(
-            height: MediaQuery.of(context).size.height * 0.50,
-            child: GridView(
-              physics: ScrollPhysics(),
-              shrinkWrap: true,
-              children: [
-                Padding(
-                  padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
-                  child: InkWell(
-                    onTap: () {
+       height: MediaQuery.of(context).size.height * 0.50,
+        child:GridView(
+          physics: ScrollPhysics(),
+          shrinkWrap: true,
+          children: [
+            Padding(
+              padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
+              child: InkWell(
+                onTap: () {
 
-                    },
-                    child: Row(
-                      children: [
-                        Expanded(
+                },
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        margin: EdgeInsets.only(
+                            top:0,
+                            bottom:15),
+                        child: Center(
                           child: Container(
-                            margin: EdgeInsets.only(
-                                top:18,
-                                bottom:0),
-                            child: Center(
-                              child: Container(
 
-                                width: size.width/2.3,
-                                height: size.height/1.5,
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    border: Border.all(color: Colors.grey, width: 1)
+                            width: size.width/2.3,
+                            height: size.height/1.5,
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                border: Border.all(color: Colors.grey, width: 1)
 
+                            ),
+                            child: Column(
+                              children: [
+                                Expanded(
+                                  child: Container(
+                                    padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
+                                    child:Image.asset("asset/cl.png", fit: BoxFit.fitWidth),
+                                  ),
                                 ),
-                                child: Column(
-                                  children: [
-                                    Expanded(
-                                      child: Container(
-                                        padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
-                                        child:Image.asset("asset/pl.png", fit: BoxFit.fitWidth),
-                                      ),
-                                    ),
-                                    Container(
+                                Container(
+                                  padding: EdgeInsets.all(8.0),
+                                  alignment: Alignment.center,
+                                  decoration: BoxDecoration(
+                                      color: Colors.black12,
+                                      border: Border(bottom:BorderSide( color: Colors.grey, width: 2))
 
-                                      padding: EdgeInsets.all(16.0),
-                                      alignment: Alignment.centerLeft,
-                                      decoration: BoxDecoration(
-                                          color: Colors.black12,
-                                          border: Border(bottom:BorderSide( color: Colors.grey, width: 2))
-
-                                      ),
-                                      child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.center,
-                                        mainAxisAlignment: MainAxisAlignment.center,
-                                        children: [
-                                          Text('Premier League'),
-                                          Text('England'),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
+                                  ),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text('Champions League',
+                                        style: GoogleFonts.poppins(
+                                            textStyle: TextStyle(
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.bold
+                                            )),),
+                                      Text('England',
+                                        style: GoogleFonts.poppins(
+                                            textStyle: TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.normal
+                                            )),),
+                                    ],
+                                  ),
                                 ),
-                              ),
+                              ],
                             ),
                           ),
                         ),
-
-                      ],
+                      ),
                     ),
-                  ),
+
+                  ],
                 ),
-                Padding(
-                  padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
-                  child: InkWell(
-                    onTap: () {
-
-                    },
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: Container(
-                            margin: EdgeInsets.only(
-                                top:0,
-                                bottom:15),
-                            child: Center(
-                              child: Container(
-
-                                width: size.width/2.3,
-                                height: size.height/1.5,
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    border: Border.all(color: Colors.grey, width: 1)
-
-                                ),
-                                child: Column(
-                                  children: [
-                                    Expanded(
-                                      child: Container(
-                                        padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
-                                        child:Image.asset("asset/lliga.png", fit: BoxFit.fitWidth),
-                                      ),
-                                    ),
-                                    Container(
-
-                                      padding: EdgeInsets.all(16.0),
-                                      alignment: Alignment.centerLeft,
-                                      decoration: BoxDecoration(
-                                          color: Colors.black12,
-                                          border: Border(bottom:BorderSide( color: Colors.grey, width: 2))
-
-                                      ),
-                                      child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.center,
-                                        mainAxisAlignment: MainAxisAlignment.center,
-                                        children: [
-                                          Text('LaLiga'),
-                                          Text('Spain'),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-
-                      ],
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
-                  child: InkWell(
-                    onTap: () {
-
-                    },
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: Container(
-                            margin: EdgeInsets.only(
-                                top:18,
-                                bottom:0),
-                            child: Center(
-                              child: Container(
-
-                                width: size.width/2.3,
-                                height: size.height/1.5,
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    border: Border.all(color: Colors.grey, width: 1)
-
-                                ),
-                                child: Column(
-                                  children: [
-                                    Expanded(
-                                      child: Container(
-                                        padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
-                                        child:Image.asset("asset/seriaa.png", fit: BoxFit.fitWidth),
-                                      ),
-                                    ),
-                                    Container(
-
-                                      padding: EdgeInsets.all(16.0),
-                                      alignment: Alignment.centerLeft,
-                                      decoration: BoxDecoration(
-                                          color: Colors.black12,
-                                          border: Border(bottom:BorderSide( color: Colors.grey, width: 2))
-
-                                      ),
-                                      child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.center,
-                                        mainAxisAlignment: MainAxisAlignment.center,
-                                        children: [
-                                          Text('Seria A'),
-                                          Text('Italy'),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-
-                      ],
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
-                  child: InkWell(
-                    onTap: () {
-
-                    },
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: Container(
-                            margin: EdgeInsets.only(
-                                top:0,
-                                bottom:15),
-                            child: Center(
-                              child: Container(
-
-                                width: size.width/2.3,
-                                height: size.height/1.5,
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    border: Border.all(color: Colors.grey, width: 1)
-
-                                ),
-                                child: Column(
-                                  children: [
-                                    Expanded(
-                                      child: Container(
-                                        padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
-                                        child:Image.asset("asset/cl.png", fit: BoxFit.fitWidth),
-                                      ),
-                                    ),
-                                    Container(
-
-                                      padding: EdgeInsets.all(16.0),
-                                      alignment: Alignment.centerLeft,
-                                      decoration: BoxDecoration(
-                                          color: Colors.black12,
-                                          border: Border(bottom:BorderSide( color: Colors.grey, width: 2))
-
-                                      ),
-                                      child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.center,
-                                        mainAxisAlignment: MainAxisAlignment.center,
-                                        children: [
-                                          Text('Champions League'),
-                                          Text('England'),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-
-                      ],
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
-                  child: InkWell(
-                    onTap: () {
-
-                    },
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: Container(
-                            margin: EdgeInsets.only(
-                                top:18,
-                                bottom:0),
-                            child: Center(
-                              child: Container(
-
-                                width: size.width/2.3,
-                                height: size.height/1.5,
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    border: Border.all(color: Colors.grey, width: 1)
-
-                                ),
-                                child: Column(
-                                  children: [
-                                    Expanded(
-                                      child: Container(
-                                        padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
-                                        child:Image.asset("asset/bliga.png", fit: BoxFit.fitWidth),
-                                      ),
-                                    ),
-                                    Container(
-
-                                      padding: EdgeInsets.all(16.0),
-                                      alignment: Alignment.centerLeft,
-                                      decoration: BoxDecoration(
-                                          color: Colors.black12,
-                                          border: Border(bottom:BorderSide( color: Colors.grey, width: 2))
-
-                                      ),
-                                      child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.center,
-                                        mainAxisAlignment: MainAxisAlignment.center,
-                                        children: [
-                                          Text('Bundes Liga'),
-                                          Text('German'),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-
-                      ],
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
-                  child: InkWell(
-                    onTap: () {
-
-                    },
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: Container(
-                            margin: EdgeInsets.only(
-                                top:0,
-                                bottom:15),
-                            child: Center(
-                              child: Container(
-
-                                width: size.width/2.3,
-                                height: size.height/1.5,
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    border: Border.all(color: Colors.grey, width: 1)
-
-                                ),
-                                child: Column(
-                                  children: [
-                                    Expanded(
-                                      child: Container(
-                                        padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
-                                        child:Image.asset("asset/pseria.png", fit: BoxFit.fitWidth),
-                                      ),
-                                    ),
-                                    Container(
-
-                                      padding: EdgeInsets.all(16.0),
-                                      alignment: Alignment.centerLeft,
-                                      decoration: BoxDecoration(
-                                          color: Colors.black12,
-                                          border: Border(bottom:BorderSide( color: Colors.grey, width: 2))
-
-                                      ),
-                                      child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.center,
-                                        mainAxisAlignment: MainAxisAlignment.center,
-                                        children: [
-                                          Text('Liga Nos'),
-                                          Text('Portugal'),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                childAspectRatio: MediaQuery.of(context).size.width /
-                    (MediaQuery.of(context).size.height / 1.8),
               ),
             ),
+            Padding(
+              padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
+              child: InkWell(
+                onTap: () {
+
+                },
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        margin: EdgeInsets.only(
+                            top:18,
+                            bottom:0),
+                        child: Center(
+                          child: Container(
+
+                            width: size.width/2.3,
+                            height: size.height/1.5,
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                border: Border.all(color: Colors.grey, width: 1)
+
+                            ),
+                            child: Column(
+                              children: [
+                                Expanded(
+                                  child: Container(
+                                    padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
+                                    child:Image.asset("asset/seriaa.png", fit: BoxFit.fitWidth),
+                                  ),
+                                ),
+                                Container(
+                                  padding: EdgeInsets.all(8.0),
+                                  alignment: Alignment.center,
+                                  decoration: BoxDecoration(
+                                      color: Colors.black12,
+                                      border: Border(bottom:BorderSide( color: Colors.grey, width: 2))
+
+                                  ),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text('Seria A',
+                                        style: GoogleFonts.poppins(
+                                            textStyle: TextStyle(
+                                                fontSize: 13,
+                                                fontWeight: FontWeight.bold
+                                            )),),
+                                      Text('Italy',
+                                        style: GoogleFonts.poppins(
+                                            textStyle: TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.normal
+                                            )),),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
+              child: InkWell(
+                onTap: () {
+
+                },
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        margin: EdgeInsets.only(
+                            top:0,
+                            bottom:15),
+                        child: Center(
+                          child: Container(
+
+                            width: size.width/2.3,
+                            height: size.height/1.5,
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                border: Border.all(color: Colors.grey, width: 1)
+
+                            ),
+                            child: Column(
+                              children: [
+                                Expanded(
+                                  child: Container(
+                                    padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
+                                    child:Image.asset("asset/lliga.png", fit: BoxFit.fitWidth),
+                                  ),
+                                ),
+                                Container(
+
+                                  padding: EdgeInsets.all(8.0),
+                                  alignment: Alignment.center,
+                                  decoration: BoxDecoration(
+                                      color: Colors.black12,
+                                      border: Border(bottom:BorderSide( color: Colors.grey, width: 2))
+
+                                  ),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text('LaLiga',
+                                        style: GoogleFonts.poppins(
+                                            textStyle: TextStyle(
+                                                fontSize: 13,
+                                                fontWeight: FontWeight.bold
+                                            )),),
+                                      Text('Spain',
+                                        style: GoogleFonts.poppins(
+                                            textStyle: TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.normal
+                                            )),),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
+              child: InkWell(
+                onTap: () {
+
+                },
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        margin: EdgeInsets.only(
+                            top:18,
+                            bottom:0),
+                        child: Center(
+                          child: Container(
+
+                            width: size.width/2.3,
+                            height: size.height/1.5,
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                border: Border.all(color: Colors.grey, width: 1)
+
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Expanded(
+                                  child: Container(
+                                    padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
+                                    child:Image.asset("asset/pl.png", fit: BoxFit.fitWidth),
+                                  ),
+                                ),
+                                Container(
+
+                                  padding: EdgeInsets.all(8.0),
+                                  alignment: Alignment.center,
+                                  decoration: BoxDecoration(
+                                      color: Colors.black12,
+                                      border: Border(bottom:BorderSide( color: Colors.grey, width: 2))
+
+                                  ),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text('Premier League',
+                                        style: GoogleFonts.poppins(
+                                            textStyle: TextStyle(
+                                                fontSize: 13,
+                                                fontWeight: FontWeight.bold
+                                            )),),
+                                      Text('England',
+                                        style: GoogleFonts.poppins(
+                                            textStyle: TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.normal
+                                            )),),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
+              child: InkWell(
+                onTap: () {
+
+                },
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        margin: EdgeInsets.only(
+                            top:0,
+                            bottom:15),
+                        child: Center(
+                          child: Container(
+
+                            width: size.width/2.3,
+                            height: size.height/1.5,
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                border: Border.all(color: Colors.grey, width: 1)
+
+                            ),
+                            child: Column(
+                              children: [
+                                Expanded(
+                                  child: Container(
+                                    padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
+                                    child:Image.asset("asset/pseria.png", fit: BoxFit.fitWidth),
+                                  ),
+                                ),
+                                Container(
+
+                                  padding: EdgeInsets.all(8.0),
+                                  alignment: Alignment.center,
+                                  decoration: BoxDecoration(
+                                      color: Colors.black12,
+                                      border: Border(bottom:BorderSide( color: Colors.grey, width: 2))
+
+                                  ),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text('Liga Nos',
+                                        style: GoogleFonts.poppins(
+                                            textStyle: TextStyle(
+                                                fontSize: 13,
+                                                fontWeight: FontWeight.bold
+                                            )),),
+                                      Text('Portugal',
+                                        style: GoogleFonts.poppins(
+                                            textStyle: TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.normal
+                                            )),),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
+              child: InkWell(
+                onTap: () {
+
+                },
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        margin: EdgeInsets.only(
+                            top:18,
+                            bottom:0),
+                        child: Center(
+                          child: Container(
+
+                            width: size.width/2.3,
+                            height: size.height/1.5,
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                border: Border.all(color: Colors.grey, width: 1)
+
+                            ),
+                            child: Column(
+                              children: [
+                                Expanded(
+                                  child: Container(
+                                    padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
+                                    child:Image.asset("asset/bliga.png", fit: BoxFit.fitWidth),
+                                  ),
+                                ),
+                                Container(
+
+                                  padding: EdgeInsets.all(8.0),
+                                  alignment: Alignment.center,
+                                  decoration: BoxDecoration(
+                                      color: Colors.black12,
+                                      border: Border(bottom:BorderSide( color: Colors.grey, width: 2))
+
+                                  ),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text('Bundes Liga',
+                                        style: GoogleFonts.poppins(
+                                            textStyle: TextStyle(
+                                                fontSize: 13,
+                                                fontWeight: FontWeight.bold
+                                            )),),
+                                      Text('German',
+                                        style: GoogleFonts.poppins(
+                                            textStyle: TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.normal
+                                            )),),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+
+                  ],
+                ),
+              ),
+            ),
+          ],
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            childAspectRatio: MediaQuery.of(context).size.width /
+                (MediaQuery.of(context).size.height / 1.8),
+          ),
         ),
       );
     }
