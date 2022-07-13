@@ -178,8 +178,190 @@ class _MyHomePageState extends State<MyHomePage> {
 
                                       ),
                                       child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                        mainAxisAlignment: MainAxisAlignment.center,
                                         children: [
                                           Text('Premier League'),
+                                          Text('England'),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+
+                      ],
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
+                  child: InkWell(
+                    onTap: () {
+
+                    },
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Container(
+                            margin: EdgeInsets.only(
+                                top:0,
+                                bottom:15),
+                            child: Center(
+                              child: Container(
+
+                                width: size.width/2.3,
+                                height: size.height/1.5,
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    border: Border.all(color: Colors.grey, width: 1)
+
+                                ),
+                                child: Column(
+                                  children: [
+                                    Expanded(
+                                      child: Container(
+                                        padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
+                                        child:Image.asset("asset/lliga.png", fit: BoxFit.fitWidth),
+                                      ),
+                                    ),
+                                    Container(
+
+                                      padding: EdgeInsets.all(16.0),
+                                      alignment: Alignment.centerLeft,
+                                      decoration: BoxDecoration(
+                                          color: Colors.black12,
+                                          border: Border(bottom:BorderSide( color: Colors.grey, width: 2))
+
+                                      ),
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          Text('LaLiga'),
+                                          Text('Spain'),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+
+                      ],
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
+                  child: InkWell(
+                    onTap: () {
+
+                    },
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Container(
+                            margin: EdgeInsets.only(
+                                top:18,
+                                bottom:0),
+                            child: Center(
+                              child: Container(
+
+                                width: size.width/2.3,
+                                height: size.height/1.5,
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    border: Border.all(color: Colors.grey, width: 1)
+
+                                ),
+                                child: Column(
+                                  children: [
+                                    Expanded(
+                                      child: Container(
+                                        padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
+                                        child:Image.asset("asset/seriaa.png", fit: BoxFit.fitWidth),
+                                      ),
+                                    ),
+                                    Container(
+
+                                      padding: EdgeInsets.all(16.0),
+                                      alignment: Alignment.centerLeft,
+                                      decoration: BoxDecoration(
+                                          color: Colors.black12,
+                                          border: Border(bottom:BorderSide( color: Colors.grey, width: 2))
+
+                                      ),
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          Text('Seria A'),
+                                          Text('Italy'),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+
+                      ],
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
+                  child: InkWell(
+                    onTap: () {
+
+                    },
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Container(
+                            margin: EdgeInsets.only(
+                                top:0,
+                                bottom:15),
+                            child: Center(
+                              child: Container(
+
+                                width: size.width/2.3,
+                                height: size.height/1.5,
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    border: Border.all(color: Colors.grey, width: 1)
+
+                                ),
+                                child: Column(
+                                  children: [
+                                    Expanded(
+                                      child: Container(
+                                        padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
+                                        child:Image.asset("asset/cl.png", fit: BoxFit.fitWidth),
+                                      ),
+                                    ),
+                                    Container(
+
+                                      padding: EdgeInsets.all(16.0),
+                                      alignment: Alignment.centerLeft,
+                                      decoration: BoxDecoration(
+                                          color: Colors.black12,
+                                          border: Border(bottom:BorderSide( color: Colors.grey, width: 2))
+
+                                      ),
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          Text('Champions League'),
                                           Text('England'),
                                         ],
                                       ),
@@ -223,7 +405,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     Expanded(
                                       child: Container(
                                         padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
-                                        child:Image.network("usar.emblem", fit: BoxFit.fitWidth),
+                                        child:Image.asset("asset/bliga.png", fit: BoxFit.fitWidth),
                                       ),
                                     ),
                                     Container(
@@ -235,7 +417,14 @@ class _MyHomePageState extends State<MyHomePage> {
                                           border: Border(bottom:BorderSide( color: Colors.grey, width: 2))
 
                                       ),
-                                      child: Text('supportingText'),
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          Text('Bundes Liga'),
+                                          Text('German'),
+                                        ],
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -259,8 +448,8 @@ class _MyHomePageState extends State<MyHomePage> {
                         Expanded(
                           child: Container(
                             margin: EdgeInsets.only(
-                                top:18,
-                                bottom:0),
+                                top:0,
+                                bottom:15),
                             child: Center(
                               child: Container(
 
@@ -276,7 +465,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     Expanded(
                                       child: Container(
                                         padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
-                                        child:Image.network("usar.emblem", fit: BoxFit.fitWidth),
+                                        child:Image.asset("asset/pseria.png", fit: BoxFit.fitWidth),
                                       ),
                                     ),
                                     Container(
@@ -288,166 +477,14 @@ class _MyHomePageState extends State<MyHomePage> {
                                           border: Border(bottom:BorderSide( color: Colors.grey, width: 2))
 
                                       ),
-                                      child: Text('supportingText'),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-
-                      ],
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
-                  child: InkWell(
-                    onTap: () {
-
-                    },
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: Container(
-                            margin: EdgeInsets.only(
-                                top:18,
-                                bottom:0),
-                            child: Center(
-                              child: Container(
-
-                                width: size.width/2.3,
-                                height: size.height/1.5,
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    border: Border.all(color: Colors.grey, width: 1)
-
-                                ),
-                                child: Column(
-                                  children: [
-                                    Expanded(
-                                      child: Container(
-                                        padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
-                                        child:Image.network("usar.emblem", fit: BoxFit.fitWidth),
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          Text('Liga Nos'),
+                                          Text('Portugal'),
+                                        ],
                                       ),
-                                    ),
-                                    Container(
-
-                                      padding: EdgeInsets.all(16.0),
-                                      alignment: Alignment.centerLeft,
-                                      decoration: BoxDecoration(
-                                          color: Colors.black12,
-                                          border: Border(bottom:BorderSide( color: Colors.grey, width: 2))
-
-                                      ),
-                                      child: Text('supportingText'),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-
-                      ],
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
-                  child: InkWell(
-                    onTap: () {
-
-                    },
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: Container(
-                            margin: EdgeInsets.only(
-                                top:18,
-                                bottom:0),
-                            child: Center(
-                              child: Container(
-
-                                width: size.width/2.3,
-                                height: size.height/1.5,
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    border: Border.all(color: Colors.grey, width: 1)
-
-                                ),
-                                child: Column(
-                                  children: [
-                                    Expanded(
-                                      child: Container(
-                                        padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
-                                        child:Image.network("usar.emblem", fit: BoxFit.fitWidth),
-                                      ),
-                                    ),
-                                    Container(
-
-                                      padding: EdgeInsets.all(16.0),
-                                      alignment: Alignment.centerLeft,
-                                      decoration: BoxDecoration(
-                                          color: Colors.black12,
-                                          border: Border(bottom:BorderSide( color: Colors.grey, width: 2))
-
-                                      ),
-                                      child: Text('supportingText'),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-
-                      ],
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
-                  child: InkWell(
-                    onTap: () {
-
-                    },
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: Container(
-                            margin: EdgeInsets.only(
-                                top:18,
-                                bottom:0),
-                            child: Center(
-                              child: Container(
-
-                                width: size.width/2.3,
-                                height: size.height/1.5,
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    border: Border.all(color: Colors.grey, width: 1)
-
-                                ),
-                                child: Column(
-                                  children: [
-                                    Expanded(
-                                      child: Container(
-                                        padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
-                                        child:Image.network("usar.emblem", fit: BoxFit.fitWidth),
-                                      ),
-                                    ),
-                                    Container(
-
-                                      padding: EdgeInsets.all(16.0),
-                                      alignment: Alignment.centerLeft,
-                                      decoration: BoxDecoration(
-                                          color: Colors.black12,
-                                          border: Border(bottom:BorderSide( color: Colors.grey, width: 2))
-
-                                      ),
-                                      child: Text('supportingText'),
                                     ),
                                   ],
                                 ),
