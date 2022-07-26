@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:soccerrank/api/classs.dart';
 import 'package:soccerrank/screens/league%20details.dart';
-import 'package:soccerrank/screens/product_card.dart';
 import 'package:soccerrank/style/colors.dart';
 import 'package:soccerrank/style/styles.dart';
 import 'package:http/http.dart' as http;
