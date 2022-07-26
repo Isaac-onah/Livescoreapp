@@ -116,164 +116,625 @@ class _leagueDetailsState extends State<leagueDetails> {
                 height: 300,
                 child: TabBarView(children: [
                   Container(
-                    child: Text(
-                      "tab3 ",
-                      style: TextStyle(color: AppColors.purple),
-                    ),
-                  ),
+                      child: ListView(
+                          physics: const BouncingScrollPhysics(
+                              parent: AlwaysScrollableScrollPhysics()),
+                          children: [
+                        Column(
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 8.0, vertical: 15),
+                              child: Center(
+                                child: Row(
+                                  children: [
+                                    Expanded(
+                                        child: Text(
+                                      "data",
+                                      textAlign: TextAlign.end,
+                                    )),
+                                    Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 8.0),
+                                      child: Image.asset(
+                                        "asset/baca.png",
+                                        width: 30,
+                                      ),
+                                    ),
+                                    Container(
+                                      color: Colors.pink,
+                                      width: 60,
+                                      height: 30,
+                                      child: Padding(
+                                        padding: EdgeInsets.all(5.0),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text('10'),
+                                            VerticalDivider(),
+                                            Text('10'),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 8.0),
+                                      child: Image.asset(
+                                        "asset/baca.png",
+                                        width: 30,
+                                      ),
+                                    ),
+                                    Expanded(child: Text("data")),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Divider(
+                              thickness: 2,
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 8.0, vertical: 15),
+                              child: Center(
+                                child: Row(
+                                  children: [
+                                    Expanded(
+                                        child: Text(
+                                      "data",
+                                      textAlign: TextAlign.end,
+                                    )),
+                                    Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 8.0),
+                                      child: Image.asset(
+                                        "asset/baca.png",
+                                        width: 30,
+                                      ),
+                                    ),
+                                    Container(
+                                      color: Colors.pink,
+                                      width: 60,
+                                      height: 30,
+                                      child: Padding(
+                                        padding: EdgeInsets.all(5.0),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text('10'),
+                                            VerticalDivider(),
+                                            Text('10'),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 8.0),
+                                      child: Image.asset(
+                                        "asset/baca.png",
+                                        width: 30,
+                                      ),
+                                    ),
+                                    Expanded(child: Text("data")),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Divider(
+                              thickness: 2,
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 8.0, vertical: 15),
+                              child: Center(
+                                child: Row(
+                                  children: [
+                                    Expanded(
+                                        child: Text(
+                                      "data",
+                                      textAlign: TextAlign.end,
+                                    )),
+                                    Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 8.0),
+                                      child: Image.asset(
+                                        "asset/baca.png",
+                                        width: 30,
+                                      ),
+                                    ),
+                                    Container(
+                                      color: Colors.pink,
+                                      width: 60,
+                                      height: 30,
+                                      child: Padding(
+                                        padding: EdgeInsets.all(5.0),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text('10'),
+                                            VerticalDivider(),
+                                            Text('10'),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 8.0),
+                                      child: Image.asset(
+                                        "asset/baca.png",
+                                        width: 30,
+                                      ),
+                                    ),
+                                    Expanded(child: Text("data")),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Divider(
+                              thickness: 2,
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 8.0, vertical: 15),
+                              child: Center(
+                                child: Row(
+                                  children: [
+                                    Expanded(
+                                        child: Text(
+                                      "data",
+                                      textAlign: TextAlign.end,
+                                    )),
+                                    Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 8.0),
+                                      child: Image.asset(
+                                        "asset/baca.png",
+                                        width: 30,
+                                      ),
+                                    ),
+                                    Container(
+                                      color: Colors.pink,
+                                      width: 60,
+                                      height: 30,
+                                      child: Padding(
+                                        padding: EdgeInsets.all(5.0),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text('10'),
+                                            VerticalDivider(),
+                                            Text('10'),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 8.0),
+                                      child: Image.asset(
+                                        "asset/baca.png",
+                                        width: 30,
+                                      ),
+                                    ),
+                                    Expanded(child: Text("data")),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Divider(
+                              thickness: 2,
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 8.0, vertical: 15),
+                              child: Center(
+                                child: Row(
+                                  children: [
+                                    Expanded(
+                                        child: Text(
+                                      "data",
+                                      textAlign: TextAlign.end,
+                                    )),
+                                    Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 8.0),
+                                      child: Image.asset(
+                                        "asset/baca.png",
+                                        width: 30,
+                                      ),
+                                    ),
+                                    Container(
+                                      color: Colors.pink,
+                                      width: 60,
+                                      height: 30,
+                                      child: Padding(
+                                        padding: EdgeInsets.all(5.0),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text('10'),
+                                            VerticalDivider(),
+                                            Text('10'),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 8.0),
+                                      child: Image.asset(
+                                        "asset/baca.png",
+                                        width: 30,
+                                      ),
+                                    ),
+                                    Expanded(child: Text("data")),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Divider(
+                              thickness: 2,
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 8.0, vertical: 15),
+                              child: Center(
+                                child: Row(
+                                  children: [
+                                    Expanded(
+                                        child: Text(
+                                      "data",
+                                      textAlign: TextAlign.end,
+                                    )),
+                                    Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 8.0),
+                                      child: Image.asset(
+                                        "asset/baca.png",
+                                        width: 30,
+                                      ),
+                                    ),
+                                    Container(
+                                      color: Colors.pink,
+                                      width: 60,
+                                      height: 30,
+                                      child: Padding(
+                                        padding: EdgeInsets.all(5.0),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text('10'),
+                                            VerticalDivider(),
+                                            Text('10'),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 8.0),
+                                      child: Image.asset(
+                                        "asset/baca.png",
+                                        width: 30,
+                                      ),
+                                    ),
+                                    Expanded(child: Text("data")),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Divider(
+                              thickness: 2,
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 8.0, vertical: 15),
+                              child: Center(
+                                child: Row(
+                                  children: [
+                                    Expanded(
+                                        child: Text(
+                                      "data",
+                                      textAlign: TextAlign.end,
+                                    )),
+                                    Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 8.0),
+                                      child: Image.asset(
+                                        "asset/baca.png",
+                                        width: 30,
+                                      ),
+                                    ),
+                                    Container(
+                                      color: Colors.pink,
+                                      width: 60,
+                                      height: 30,
+                                      child: Padding(
+                                        padding: EdgeInsets.all(5.0),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text('10'),
+                                            VerticalDivider(),
+                                            Text('10'),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 8.0),
+                                      child: Image.asset(
+                                        "asset/baca.png",
+                                        width: 30,
+                                      ),
+                                    ),
+                                    Expanded(child: Text("data")),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Divider(
+                              thickness: 2,
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 8.0, vertical: 15),
+                              child: Center(
+                                child: Row(
+                                  children: [
+                                    Expanded(
+                                        child: Text(
+                                      "data",
+                                      textAlign: TextAlign.end,
+                                    )),
+                                    Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 8.0),
+                                      child: Image.asset(
+                                        "asset/baca.png",
+                                        width: 30,
+                                      ),
+                                    ),
+                                    Container(
+                                      color: Colors.pink,
+                                      width: 60,
+                                      height: 30,
+                                      child: Padding(
+                                        padding: EdgeInsets.all(5.0),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text('10'),
+                                            VerticalDivider(),
+                                            Text('10'),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 8.0),
+                                      child: Image.asset(
+                                        "asset/baca.png",
+                                        width: 30,
+                                      ),
+                                    ),
+                                    Expanded(child: Text("data")),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Divider(
+                              thickness: 2,
+                            ),
+                          ],
+                        ),
+                      ])),
                   Container(
                     decoration: BoxDecoration(),
                     child: ListView(
                       physics: const BouncingScrollPhysics(
                           parent: AlwaysScrollableScrollPhysics()),
                       children: [
-                    FittedBox(
-                      child: DataTable(
-                        columnSpacing: 30,
-                      columns: const <DataColumn>[
-                        DataColumn(
-                        label: Text(
-                        'Pos',
-
-                      ),
-                  ),
-                  DataColumn(
-                      label: Text(
-                        'Club',
-                      ),
-                  ),
-                  DataColumn(
-                      label: Text(
-                        'Pl',
-                      ),
-                  ),
-                        DataColumn(
-                          label: Text(
-                            'W',
-                          ),
-                        ),
-                        DataColumn(
-                          label: Text(
-                            'D',
-                          ),
-                        ),
-                        DataColumn(
-                          label: Text(
-                            'L',
-                          ),
-                        ),
-                        DataColumn(
-                          label: Text(
-                            'GD',
-                          ),
-                        ),
-                        DataColumn(
-                          label: Text(
-                            'Pts',
+                        FittedBox(
+                          child: DataTable(
+                            columnSpacing: 30,
+                            columns: const <DataColumn>[
+                              DataColumn(
+                                label: Text(
+                                  'Pos',
+                                ),
+                              ),
+                              DataColumn(
+                                label: Text(
+                                  'Club',
+                                ),
+                              ),
+                              DataColumn(
+                                label: Text(
+                                  'Pl',
+                                ),
+                              ),
+                              DataColumn(
+                                label: Text(
+                                  'W',
+                                ),
+                              ),
+                              DataColumn(
+                                label: Text(
+                                  'D',
+                                ),
+                              ),
+                              DataColumn(
+                                label: Text(
+                                  'L',
+                                ),
+                              ),
+                              DataColumn(
+                                label: Text(
+                                  'GD',
+                                ),
+                              ),
+                              DataColumn(
+                                label: Text(
+                                  'Pts',
+                                ),
+                              )
+                            ],
+                            rows: <DataRow>[
+                              DataRow(
+                                cells: <DataCell>[
+                                  DataCell(Text('1')),
+                                  DataCell(Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 8.0),
+                                        child: Image.asset(
+                                          "asset/baca.png",
+                                        ),
+                                      ),
+                                      Text('club name')
+                                    ],
+                                  )),
+                                  DataCell(Text('34')),
+                                  DataCell(Text('26')),
+                                  DataCell(Text('5')),
+                                  DataCell(Text('3')),
+                                  DataCell(Text('63')),
+                                  DataCell(Text(
+                                    '83',
+                                    style: TextStyle(fontSize: 20),
+                                  )),
+                                ],
+                              ),
+                              DataRow(
+                                cells: <DataCell>[
+                                  DataCell(Text('1')),
+                                  DataCell(Text('thisclub')),
+                                  DataCell(Text('34')),
+                                  DataCell(Text('26')),
+                                  DataCell(Text('5')),
+                                  DataCell(Text('3')),
+                                  DataCell(Text('63')),
+                                  DataCell(Text('83')),
+                                ],
+                              ),
+                              DataRow(
+                                cells: <DataCell>[
+                                  DataCell(Text('1')),
+                                  DataCell(Text('thisclub')),
+                                  DataCell(Text('34')),
+                                  DataCell(Text('26')),
+                                  DataCell(Text('5')),
+                                  DataCell(Text('3')),
+                                  DataCell(Text('63')),
+                                  DataCell(Text('83')),
+                                ],
+                              ),
+                              DataRow(
+                                cells: <DataCell>[
+                                  DataCell(Text('1')),
+                                  DataCell(Text('thisclub')),
+                                  DataCell(Text('34')),
+                                  DataCell(Text('26')),
+                                  DataCell(Text('5')),
+                                  DataCell(Text('3')),
+                                  DataCell(Text('63')),
+                                  DataCell(Text('83')),
+                                ],
+                              ),
+                              DataRow(
+                                cells: <DataCell>[
+                                  DataCell(Text('1')),
+                                  DataCell(Text('thisclub')),
+                                  DataCell(Text('34')),
+                                  DataCell(Text('26')),
+                                  DataCell(Text('5')),
+                                  DataCell(Text('3')),
+                                  DataCell(Text('63')),
+                                  DataCell(Text('83')),
+                                ],
+                              ),
+                              DataRow(
+                                cells: <DataCell>[
+                                  DataCell(Text('1')),
+                                  DataCell(Text('thisclub')),
+                                  DataCell(Text('34')),
+                                  DataCell(Text('26')),
+                                  DataCell(Text('5')),
+                                  DataCell(Text('3')),
+                                  DataCell(Text('63')),
+                                  DataCell(Text('83')),
+                                ],
+                              ),
+                              DataRow(
+                                cells: <DataCell>[
+                                  DataCell(Text('1')),
+                                  DataCell(Text('thisclub')),
+                                  DataCell(Text('34')),
+                                  DataCell(Text('26')),
+                                  DataCell(Text('5')),
+                                  DataCell(Text('3')),
+                                  DataCell(Text('63')),
+                                  DataCell(Text('83')),
+                                ],
+                              ),
+                              DataRow(
+                                cells: <DataCell>[
+                                  DataCell(Text('1')),
+                                  DataCell(Text('thisclub')),
+                                  DataCell(Text('34')),
+                                  DataCell(Text('26')),
+                                  DataCell(Text('5')),
+                                  DataCell(Text('3')),
+                                  DataCell(Text('63')),
+                                  DataCell(Text('83')),
+                                ],
+                              ),
+                            ],
                           ),
                         )
-                ],
-                  rows: <DataRow>[
-                      DataRow(
-                        cells: <DataCell>[
-                          DataCell(Text('1')),
-                          DataCell(Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [Padding(
-                            padding:EdgeInsets.symmetric(horizontal: 8.0),
-                            child: Image.asset("asset/baca.png",),
-                          ),Text('club name')],)),
-                          DataCell(Text('34')),
-                          DataCell(Text('26')),
-                          DataCell(Text('5')),
-                          DataCell(Text('3')),
-                          DataCell(Text('63')),
-                          DataCell(Text('83', style: TextStyle(fontSize: 20),)),
-                        ],
-                      ),
-                    DataRow(
-                      cells: <DataCell>[
-                        DataCell(Text('1')),
-                        DataCell(Text('thisclub')),
-                        DataCell(Text('34')),
-                        DataCell(Text('26')),
-                        DataCell(Text('5')),
-                        DataCell(Text('3')),
-                        DataCell(Text('63')),
-                        DataCell(Text('83')),
-                      ],
-                    ),
-                    DataRow(
-                      cells: <DataCell>[
-                        DataCell(Text('1')),
-                        DataCell(Text('thisclub')),
-                        DataCell(Text('34')),
-                        DataCell(Text('26')),
-                        DataCell(Text('5')),
-                        DataCell(Text('3')),
-                        DataCell(Text('63')),
-                        DataCell(Text('83')),
-                      ],
-                    ),
-                    DataRow(
-                      cells: <DataCell>[
-                        DataCell(Text('1')),
-                        DataCell(Text('thisclub')),
-                        DataCell(Text('34')),
-                        DataCell(Text('26')),
-                        DataCell(Text('5')),
-                        DataCell(Text('3')),
-                        DataCell(Text('63')),
-                        DataCell(Text('83')),
-                      ],
-                    ),DataRow(
-                      cells: <DataCell>[
-                        DataCell(Text('1')),
-                        DataCell(Text('thisclub')),
-                        DataCell(Text('34')),
-                        DataCell(Text('26')),
-                        DataCell(Text('5')),
-                        DataCell(Text('3')),
-                        DataCell(Text('63')),
-                        DataCell(Text('83')),
-                      ],
-                    ),DataRow(
-                      cells: <DataCell>[
-                        DataCell(Text('1')),
-                        DataCell(Text('thisclub')),
-                        DataCell(Text('34')),
-                        DataCell(Text('26')),
-                        DataCell(Text('5')),
-                        DataCell(Text('3')),
-                        DataCell(Text('63')),
-                        DataCell(Text('83')),
-                      ],
-                    ),DataRow(
-                      cells: <DataCell>[
-                        DataCell(Text('1')),
-                        DataCell(Text('thisclub')),
-                        DataCell(Text('34')),
-                        DataCell(Text('26')),
-                        DataCell(Text('5')),
-                        DataCell(Text('3')),
-                        DataCell(Text('63')),
-                        DataCell(Text('83')),
-                      ],
-                    ),DataRow(
-                      cells: <DataCell>[
-                        DataCell(Text('1')),
-                        DataCell(Text('thisclub')),
-                        DataCell(Text('34')),
-                        DataCell(Text('26')),
-                        DataCell(Text('5')),
-                        DataCell(Text('3')),
-                        DataCell(Text('63')),
-                        DataCell(Text('83')),
-                      ],
-                    ),
-                  ],
-                ),
-                    )
                       ],
                     ),
                   ),
