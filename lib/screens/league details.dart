@@ -624,106 +624,157 @@ class _leagueDetailsState extends State<leagueDetails> {
                               DataRow(
                                 cells: <DataCell>[
                                   DataCell(Text('1')),
-                                  DataCell(Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsets.symmetric(
-                                            horizontal: 8.0),
-                                        child: Image.asset(
-                                          "asset/baca.png",
+                                  DataCell(Container(
+                                    width: 200,
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.symmetric(
+                                              horizontal: 8.0),
+                                          child: Image.asset(
+                                            "asset/manc.png",
+                                          ),
                                         ),
-                                      ),
-                                      Text('club name')
-                                    ],
+                                        Text('Manchester City')
+                                      ],
+                                    ),
                                   )),
                                   DataCell(Text('34')),
                                   DataCell(Text('26')),
                                   DataCell(Text('5')),
                                   DataCell(Text('3')),
                                   DataCell(Text('63')),
-                                  DataCell(Text(
-                                    '83',
-                                    style: TextStyle(fontSize: 20),
+                                  DataCell(Text('83')),
+                                ],
+                              ),
+                              DataRow(
+                                cells: <DataCell>[
+                                  DataCell(Text('2')),
+                                  DataCell(Container(
+                                    width: 200,
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.symmetric(
+                                              horizontal: 8.0),
+                                          child: Image.asset(
+                                            "asset/liver.png",
+                                          ),
+                                        ),
+                                        Text('Liverpool')
+                                      ],
+                                    ),
                                   )),
-                                ],
-                              ),
-                              DataRow(
-                                cells: <DataCell>[
-                                  DataCell(Text('1')),
-                                  DataCell(Text('thisclub')),
                                   DataCell(Text('34')),
-                                  DataCell(Text('26')),
-                                  DataCell(Text('5')),
-                                  DataCell(Text('3')),
-                                  DataCell(Text('63')),
-                                  DataCell(Text('83')),
+                                  DataCell(Text('25')),
+                                  DataCell(Text('7')),
+                                  DataCell(Text('2')),
+                                  DataCell(Text('64')),
+                                  DataCell(Text('82')),
                                 ],
                               ),
                               DataRow(
                                 cells: <DataCell>[
-                                  DataCell(Text('1')),
-                                  DataCell(Text('thisclub')),
+                                  DataCell(Text('3')),
+                                  DataCell(Container(
+                                    width: 200,
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.symmetric(
+                                              horizontal: 8.0),
+                                          child: Image.asset(
+                                            "asset/chaci.png",
+                                          ),
+                                        ),
+                                        Text('Chelsea')
+                                      ],
+                                    ),
+                                  )),
                                   DataCell(Text('34')),
-                                  DataCell(Text('26')),
-                                  DataCell(Text('5')),
-                                  DataCell(Text('3')),
-                                  DataCell(Text('63')),
-                                  DataCell(Text('83')),
+                                  DataCell(Text('19')),
+                                  DataCell(Text('9')),
+                                  DataCell(Text('6')),
+                                  DataCell(Text('68')),
+                                  DataCell(Text('66')),
                                 ],
                               ),
                               DataRow(
                                 cells: <DataCell>[
-                                  DataCell(Text('1')),
-                                  DataCell(Text('thisclub')),
+                                  DataCell(Text('4')),
+                                  DataCell(Container(
+                                    width: 200,
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.symmetric(
+                                              horizontal: 8.0),
+                                          child: Image.asset(
+                                            "asset/asna.png",
+                                          ),
+                                        ),
+                                        Text('Arsenal')
+                                      ],
+                                    ),
+                                  )),
                                   DataCell(Text('34')),
-                                  DataCell(Text('26')),
-                                  DataCell(Text('5')),
+                                  DataCell(Text('20')),
                                   DataCell(Text('3')),
+                                  DataCell(Text('11')),
+                                  DataCell(Text('13')),
                                   DataCell(Text('63')),
-                                  DataCell(Text('83')),
                                 ],
                               ),
                               DataRow(
                                 cells: <DataCell>[
-                                  DataCell(Text('1')),
-                                  DataCell(Text('thisclub')),
+                                  DataCell(Text('5')),
+                                  DataCell(Container(
+                                    width: 200,
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.symmetric(
+                                              horizontal: 8.0),
+                                          child: Image.asset(
+                                            "asset/manu.png",
+                                          ),
+                                        ),
+                                        Text('Manchester United')
+                                      ],
+                                    ),
+                                  )),
                                   DataCell(Text('34')),
-                                  DataCell(Text('26')),
-                                  DataCell(Text('5')),
-                                  DataCell(Text('3')),
-                                  DataCell(Text('63')),
-                                  DataCell(Text('83')),
+                                  DataCell(Text('16')),
+                                  DataCell(Text('10')),
+                                  DataCell(Text('10')),
+                                  DataCell(Text('7')),
+                                  DataCell(Text('58')),
                                 ],
                               ),
                               DataRow(
                                 cells: <DataCell>[
-                                  DataCell(Text('1')),
-                                  DataCell(Text('thisclub')),
-                                  DataCell(Text('34')),
-                                  DataCell(Text('26')),
-                                  DataCell(Text('5')),
-                                  DataCell(Text('3')),
-                                  DataCell(Text('63')),
-                                  DataCell(Text('83')),
-                                ],
-                              ),
-                              DataRow(
-                                cells: <DataCell>[
-                                  DataCell(Text('1')),
-                                  DataCell(Text('thisclub')),
-                                  DataCell(Text('34')),
-                                  DataCell(Text('26')),
-                                  DataCell(Text('5')),
-                                  DataCell(Text('3')),
-                                  DataCell(Text('63')),
-                                  DataCell(Text('83')),
-                                ],
-                              ),
-                              DataRow(
-                                cells: <DataCell>[
-                                  DataCell(Text('1')),
-                                  DataCell(Text('thisclub')),
+                                  DataCell(Text('6')),
+                                  DataCell(Container(
+                                    width: 200,
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.symmetric(
+                                              horizontal: 8.0),
+                                          child: Image.asset(
+                                            "asset/baca.png",
+                                          ),
+                                        ),
+                                        Text('Barcelona')
+                                      ],
+                                    ),
+                                  )),
                                   DataCell(Text('34')),
                                   DataCell(Text('26')),
                                   DataCell(Text('5')),
