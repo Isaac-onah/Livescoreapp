@@ -116,6 +116,12 @@ class _leagueDetailsState extends State<leagueDetails> {
                 height: 300,
                 child: TabBarView(children: [
                   Container(
+                    child: Text(
+                      "tab3 ",
+                      style: TextStyle(color: AppColors.purple),
+                    ),
+                  ),
+                  Container(
                     decoration: BoxDecoration(),
                     child: ListView(
                       physics: const BouncingScrollPhysics(
@@ -264,12 +270,6 @@ class _leagueDetailsState extends State<leagueDetails> {
                 ),
                     )
                       ],
-                    ),
-                  ),
-                  Container(
-                    child: Text(
-                      "tab3 ",
-                      style: TextStyle(color: AppColors.purple),
                     ),
                   ),
                   Container(
