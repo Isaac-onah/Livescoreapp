@@ -129,7 +129,7 @@ class _leagueDetailsState extends State<leagueDetails> {
                       children: [
                     FittedBox(
                       child: DataTable(
-                        columnSpacing: 40,
+                        columnSpacing: 30,
                       columns: const <DataColumn>[
                         DataColumn(
                         label: Text(
@@ -177,13 +177,18 @@ class _leagueDetailsState extends State<leagueDetails> {
                       DataRow(
                         cells: <DataCell>[
                           DataCell(Text('1')),
-                          DataCell(Text('thisclub')),
+                          DataCell(Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [Padding(
+                            padding:EdgeInsets.symmetric(horizontal: 8.0),
+                            child: Image.asset("asset/baca.png",),
+                          ),Text('club name')],)),
                           DataCell(Text('34')),
                           DataCell(Text('26')),
                           DataCell(Text('5')),
                           DataCell(Text('3')),
                           DataCell(Text('63')),
-                          DataCell(Text('83')),
+                          DataCell(Text('83', style: TextStyle(fontSize: 20),)),
                         ],
                       ),
                     DataRow(
