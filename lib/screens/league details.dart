@@ -14,46 +14,7 @@ class leagueDetails extends StatefulWidget {
 }
 
 class _leagueDetailsState extends State<leagueDetails> {
-  Widget buildTable() {
-    // List<Widget> teams = [];
-    return Padding(
-      padding: const EdgeInsets.all(10),
-      child: Row(
-        children: [
-          Expanded(
-            child: Row(
-              children: [
-                Text("1"),
-                Row(
-                  children: [
-                    Image.asset(
-                      "asset/cl.png",
-                      height: 30,
-                      width: 30,
-                    ),
-                    Text("team name"),
-                  ],
-                ),
-              ],
-            ),
-          ),
-          Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text("2"),
-                Text("3"),
-                Text("3"),
-                Text("2"),
-                Text("2"),
-                Text("2"),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -62,9 +23,12 @@ class _leagueDetailsState extends State<leagueDetails> {
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
+          toolbarHeight: 100,
           foregroundColor: AppColors.purple,
           backgroundColor: Colors.white,
-          title: Text("league name"),
+          title:  Image.asset(
+           widget.logoname, width: 85,
+          ),
           elevation: 0,
           centerTitle: true,
         ),
