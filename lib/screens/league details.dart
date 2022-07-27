@@ -130,7 +130,7 @@ class _leagueDetailsState extends State<leagueDetails> {
                                   children: [
                                     Expanded(
                                         child: Text(
-                                      "data",
+                                      "Barcelona",
                                       textAlign: TextAlign.end,
                                     )),
                                     Padding(
@@ -151,9 +151,9 @@ class _leagueDetailsState extends State<leagueDetails> {
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
                                           children: [
-                                            Text('10'),
+                                            Text('4'),
                                             VerticalDivider(),
-                                            Text('10'),
+                                            Text('2'),
                                           ],
                                         ),
                                       ),
@@ -162,11 +162,11 @@ class _leagueDetailsState extends State<leagueDetails> {
                                       padding:
                                           EdgeInsets.symmetric(horizontal: 8.0),
                                       child: Image.asset(
-                                        "asset/baca.png",
+                                        "asset/manc.png",
                                         width: 30,
                                       ),
                                     ),
-                                    Expanded(child: Text("data")),
+                                    Expanded(child: Text("Man City")),
                                   ],
                                 ),
                               ),
@@ -186,14 +186,14 @@ class _leagueDetailsState extends State<leagueDetails> {
                                   children: [
                                     Expanded(
                                         child: Text(
-                                      "data",
+                                      "Liverpool",
                                       textAlign: TextAlign.end,
                                     )),
                                     Padding(
                                       padding:
                                           EdgeInsets.symmetric(horizontal: 8.0),
                                       child: Image.asset(
-                                        "asset/baca.png",
+                                        "asset/liver.png",
                                         width: 30,
                                       ),
                                     ),
@@ -207,9 +207,9 @@ class _leagueDetailsState extends State<leagueDetails> {
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
                                           children: [
-                                            Text('10'),
+                                            Text('2'),
                                             VerticalDivider(),
-                                            Text('10'),
+                                            Text('0'),
                                           ],
                                         ),
                                       ),
@@ -218,11 +218,11 @@ class _leagueDetailsState extends State<leagueDetails> {
                                       padding:
                                           EdgeInsets.symmetric(horizontal: 8.0),
                                       child: Image.asset(
-                                        "asset/baca.png",
+                                        "asset/chaci.png",
                                         width: 30,
                                       ),
                                     ),
-                                    Expanded(child: Text("data")),
+                                    Expanded(child: Text("Chelsea")),
                                   ],
                                 ),
                               ),
@@ -242,14 +242,14 @@ class _leagueDetailsState extends State<leagueDetails> {
                                   children: [
                                     Expanded(
                                         child: Text(
-                                      "data",
+                                      "PSG",
                                       textAlign: TextAlign.end,
                                     )),
                                     Padding(
                                       padding:
                                           EdgeInsets.symmetric(horizontal: 8.0),
                                       child: Image.asset(
-                                        "asset/baca.png",
+                                        "asset/psg.png",
                                         width: 30,
                                       ),
                                     ),
@@ -263,9 +263,9 @@ class _leagueDetailsState extends State<leagueDetails> {
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
                                           children: [
-                                            Text('10'),
+                                            Text('1'),
                                             VerticalDivider(),
-                                            Text('10'),
+                                            Text('1'),
                                           ],
                                         ),
                                       ),
@@ -278,7 +278,7 @@ class _leagueDetailsState extends State<leagueDetails> {
                                         width: 30,
                                       ),
                                     ),
-                                    Expanded(child: Text("data")),
+                                    Expanded(child: Text("Bacelona")),
                                   ],
                                 ),
                               ),
@@ -298,14 +298,14 @@ class _leagueDetailsState extends State<leagueDetails> {
                                   children: [
                                     Expanded(
                                         child: Text(
-                                      "data",
+                                      "Arsenal",
                                       textAlign: TextAlign.end,
                                     )),
                                     Padding(
                                       padding:
                                           EdgeInsets.symmetric(horizontal: 8.0),
                                       child: Image.asset(
-                                        "asset/baca.png",
+                                        "asset/asna.png",
                                         width: 30,
                                       ),
                                     ),
@@ -319,9 +319,9 @@ class _leagueDetailsState extends State<leagueDetails> {
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
                                           children: [
-                                            Text('10'),
+                                            Text('0'),
                                             VerticalDivider(),
-                                            Text('10'),
+                                            Text('0'),
                                           ],
                                         ),
                                       ),
@@ -330,11 +330,11 @@ class _leagueDetailsState extends State<leagueDetails> {
                                       padding:
                                           EdgeInsets.symmetric(horizontal: 8.0),
                                       child: Image.asset(
-                                        "asset/baca.png",
+                                        "asset/manu.png",
                                         width: 30,
                                       ),
                                     ),
-                                    Expanded(child: Text("data")),
+                                    Expanded(child: Text("Man United")),
                                   ],
                                 ),
                               ),
@@ -354,14 +354,14 @@ class _leagueDetailsState extends State<leagueDetails> {
                                   children: [
                                     Expanded(
                                         child: Text(
-                                      "data",
+                                      "Bayern",
                                       textAlign: TextAlign.end,
                                     )),
                                     Padding(
                                       padding:
                                           EdgeInsets.symmetric(horizontal: 8.0),
                                       child: Image.asset(
-                                        "asset/baca.png",
+                                        "asset/baya.png",
                                         width: 30,
                                       ),
                                     ),
@@ -375,9 +375,9 @@ class _leagueDetailsState extends State<leagueDetails> {
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
                                           children: [
-                                            Text('10'),
+                                            Text('6'),
                                             VerticalDivider(),
-                                            Text('10'),
+                                            Text('3'),
                                           ],
                                         ),
                                       ),
@@ -386,11 +386,11 @@ class _leagueDetailsState extends State<leagueDetails> {
                                       padding:
                                           EdgeInsets.symmetric(horizontal: 8.0),
                                       child: Image.asset(
-                                        "asset/baca.png",
+                                        "asset/liver.png",
                                         width: 30,
                                       ),
                                     ),
-                                    Expanded(child: Text("data")),
+                                    Expanded(child: Text("Liverpool")),
                                   ],
                                 ),
                               ),
@@ -410,14 +410,14 @@ class _leagueDetailsState extends State<leagueDetails> {
                                   children: [
                                     Expanded(
                                         child: Text(
-                                      "data",
+                                      "Chelsea",
                                       textAlign: TextAlign.end,
                                     )),
                                     Padding(
                                       padding:
                                           EdgeInsets.symmetric(horizontal: 8.0),
                                       child: Image.asset(
-                                        "asset/baca.png",
+                                        "asset/chaci.png",
                                         width: 30,
                                       ),
                                     ),
@@ -431,9 +431,9 @@ class _leagueDetailsState extends State<leagueDetails> {
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
                                           children: [
-                                            Text('10'),
+                                            Text('0'),
                                             VerticalDivider(),
-                                            Text('10'),
+                                            Text('1'),
                                           ],
                                         ),
                                       ),
@@ -442,11 +442,11 @@ class _leagueDetailsState extends State<leagueDetails> {
                                       padding:
                                           EdgeInsets.symmetric(horizontal: 8.0),
                                       child: Image.asset(
-                                        "asset/baca.png",
+                                        "asset/psg.png",
                                         width: 30,
                                       ),
                                     ),
-                                    Expanded(child: Text("data")),
+                                    Expanded(child: Text("PSG")),
                                   ],
                                 ),
                               ),
@@ -466,14 +466,14 @@ class _leagueDetailsState extends State<leagueDetails> {
                                   children: [
                                     Expanded(
                                         child: Text(
-                                      "data",
+                                      "Man City",
                                       textAlign: TextAlign.end,
                                     )),
                                     Padding(
                                       padding:
                                           EdgeInsets.symmetric(horizontal: 8.0),
                                       child: Image.asset(
-                                        "asset/baca.png",
+                                        "asset/manc.png",
                                         width: 30,
                                       ),
                                     ),
@@ -487,9 +487,9 @@ class _leagueDetailsState extends State<leagueDetails> {
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
                                           children: [
-                                            Text('10'),
+                                            Text('2'),
                                             VerticalDivider(),
-                                            Text('10'),
+                                            Text('2'),
                                           ],
                                         ),
                                       ),
@@ -498,11 +498,11 @@ class _leagueDetailsState extends State<leagueDetails> {
                                       padding:
                                           EdgeInsets.symmetric(horizontal: 8.0),
                                       child: Image.asset(
-                                        "asset/baca.png",
+                                        "asset/asna.png",
                                         width: 30,
                                       ),
                                     ),
-                                    Expanded(child: Text("data")),
+                                    Expanded(child: Text("Arsenal")),
                                   ],
                                 ),
                               ),
@@ -522,14 +522,14 @@ class _leagueDetailsState extends State<leagueDetails> {
                                   children: [
                                     Expanded(
                                         child: Text(
-                                      "data",
+                                      "Man United",
                                       textAlign: TextAlign.end,
                                     )),
                                     Padding(
                                       padding:
                                           EdgeInsets.symmetric(horizontal: 8.0),
                                       child: Image.asset(
-                                        "asset/baca.png",
+                                        "asset/manu.png",
                                         width: 30,
                                       ),
                                     ),
@@ -543,9 +543,9 @@ class _leagueDetailsState extends State<leagueDetails> {
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
                                           children: [
-                                            Text('10'),
+                                            Text('0'),
                                             VerticalDivider(),
-                                            Text('10'),
+                                            Text('0'),
                                           ],
                                         ),
                                       ),
@@ -554,11 +554,11 @@ class _leagueDetailsState extends State<leagueDetails> {
                                       padding:
                                           EdgeInsets.symmetric(horizontal: 8.0),
                                       child: Image.asset(
-                                        "asset/baca.png",
+                                        "asset/baya.png",
                                         width: 30,
                                       ),
                                     ),
-                                    Expanded(child: Text("data")),
+                                    Expanded(child: Text("Bayern")),
                                   ],
                                 ),
                               ),
