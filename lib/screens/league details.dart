@@ -69,9 +69,7 @@ class _leagueDetailsState extends State<leagueDetails> {
           padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
           child: Column(children: [
             Container(
-              width: 50,
-              height: 50,
-              color: Colors.red,
+              child: currentLabel(home:"Barcelona",homelogo: "asset/baca.png",homescore:'4',awayscore: '2',awaylogo:"asset/manc.png", away: "Man City"),
             ),
             Container(
               height: 50,
@@ -358,6 +356,8 @@ class _leagueDetailsState extends State<leagueDetails> {
                         FittedBox(
                           child: DataTable(
                             columnSpacing: 30,
+                            horizontalMargin: 40,
+
                             columns: const <DataColumn>[
                               DataColumn(
                                 label: Text(
