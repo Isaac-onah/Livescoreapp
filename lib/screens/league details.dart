@@ -4,7 +4,10 @@ import 'package:soccerrank/screens/widgets.dart';
 import 'package:soccerrank/style/colors.dart';
 
 class leagueDetails extends StatefulWidget {
-  const leagueDetails({Key? key}) : super(key: key);
+  final String leagueName;
+  final String logoname;
+
+  leagueDetails({ required this.leagueName, required this.logoname});
 
   @override
   _leagueDetailsState createState() => _leagueDetailsState();

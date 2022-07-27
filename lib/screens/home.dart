@@ -157,7 +157,7 @@ class _MyHomePageState extends State<MyHomePage> {
               padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
               child: InkWell(
                 onTap: () {
-
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>leagueDetails(leagueName:"Champions League", logoname: "asset/champp.png",)));
                 },
                 child: Row(
                   children: [
@@ -226,7 +226,7 @@ class _MyHomePageState extends State<MyHomePage> {
               padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
               child: InkWell(
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>leagueDetails()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>leagueDetails(leagueName:"Serie A", logoname: "asset/serie.png",)));
                 },
                 child: Row(
                   children: [
@@ -295,7 +295,7 @@ class _MyHomePageState extends State<MyHomePage> {
               padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
               child: InkWell(
                 onTap: () {
-
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>leagueDetails(leagueName:"La Liga", logoname: "asset/LaLiga.png",)));
                 },
                 child: Row(
                   children: [
@@ -365,7 +365,7 @@ class _MyHomePageState extends State<MyHomePage> {
               padding:EdgeInsets.all(MediaQuery.of(context).size.width*0.01),
               child: InkWell(
                 onTap: () {
-
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>leagueDetails(leagueName:"Premier League", logoname: "asset/barclay.png",)));
                 },
                 child: Row(
                   children: [

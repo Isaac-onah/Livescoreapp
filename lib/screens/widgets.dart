@@ -16,7 +16,7 @@ class matchLabel extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(
-              horizontal: 8.0, vertical: 15),
+              horizontal: 8.0, vertical: 12),
           child: Center(
             child: Row(
               children: [
@@ -64,7 +64,7 @@ class matchLabel extends StatelessWidget {
           ),
         ),
         Divider(
-          thickness: 2,
+          thickness: 1,
         ),
       ],
     );
