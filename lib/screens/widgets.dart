@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:soccerrank/style/colors.dart';
 
 class matchLabel extends StatelessWidget {
   final String home;
@@ -33,7 +34,7 @@ class matchLabel extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  color: Colors.pink,
+                  color: AppColors.purple,
                   width: 60,
                   height: 30,
                   child: Padding(
@@ -42,9 +43,9 @@ class matchLabel extends StatelessWidget {
                       mainAxisAlignment:
                       MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(homescore),
-                        VerticalDivider(),
-                        Text(awayscore),
+                        Text(homescore, style: TextStyle(color: Colors.white),),
+                        VerticalDivider(color: Colors.grey,),
+                        Text(awayscore, style: TextStyle(color: Colors.white)),
                       ],
                     ),
                   ),

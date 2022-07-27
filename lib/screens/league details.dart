@@ -128,64 +128,7 @@ class _leagueDetailsState extends State<leagueDetails> {
                             matchLabel(home:"Bayern",homelogo: "asset/baya.png",homescore:'6',awayscore: '3',awaylogo:"asset/liver.png", away: "Liverpool"),
                             matchLabel(home:"Chelsea",homelogo: "asset/chaci.png",homescore:'0',awayscore: '1',awaylogo:"asset/psg.png", away: "PSG"),
                             matchLabel(home:"Man City",homelogo: "asset/manc.png",homescore:'2',awayscore: '2',awaylogo:"asset/asna.png", away: "Arsenal"),
-                            matchLabel(home:"Man United",homelogo: "asset/manu.png",homescore:'0',awayscore: '0',awaylogo:"asset/asna.png", away: "Arsenal"),
-
-                        Column(
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 8.0, vertical: 15),
-                              child: Center(
-                                child: Row(
-                                  children: [
-                                    Expanded(
-                                        child: Text(
-                                      "Man United",
-                                      textAlign: TextAlign.end,
-                                    )),
-                                    Padding(
-                                      padding:
-                                          EdgeInsets.symmetric(horizontal: 8.0),
-                                      child: Image.asset(
-                                        "asset/manu.png",
-                                        width: 30,
-                                      ),
-                                    ),
-                                    Container(
-                                      color: Colors.pink,
-                                      width: 60,
-                                      height: 30,
-                                      child: Padding(
-                                        padding: EdgeInsets.all(5.0),
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Text('0'),
-                                            VerticalDivider(),
-                                            Text('0'),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding:
-                                          EdgeInsets.symmetric(horizontal: 8.0),
-                                      child: Image.asset(
-                                        "asset/baya.png",
-                                        width: 30,
-                                      ),
-                                    ),
-                                    Expanded(child: Text("Bayern")),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            Divider(
-                              thickness: 2,
-                            ),
-                          ],
-                        ),
+                            matchLabel(home:"Man United",homelogo: "asset/manu.png",homescore:'0',awayscore: '0',awaylogo:"asset/baya.png", away: "Bayern"),
                       ])),
                   Container(
                     decoration: BoxDecoration(),
