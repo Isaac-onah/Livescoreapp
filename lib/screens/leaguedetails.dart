@@ -193,7 +193,7 @@ class _leagueDetailsState extends State<leagueDetails> {
                               // final w = loans.results[index].loanApplicationStatus.name;
 
                               return DataRow(cells: [
-                                DataCell(Container(width: 75, child: Text(taable.standings[index].table[index].position))),
+                                DataCell(Container(width: 75, child: Text("tble"))),
                                 DataCell(Container(child: Text("x"))),
                                 DataCell(Container(child: Text('w'))),
                                 DataCell(Container(child: Text("z"))),
