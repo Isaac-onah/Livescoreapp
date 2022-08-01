@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:soccerrank/api/classs.dart';
 import 'package:soccerrank/screens/widgets.dart';
 import 'package:soccerrank/style/colors.dart';
+import 'package:http/http.dart' as http;
 
 class leagueDetails extends StatefulWidget {
   final String leagueName;
@@ -14,7 +16,48 @@ class leagueDetails extends StatefulWidget {
 }
 
 class _leagueDetailsState extends State<leagueDetails> {
+  late bool _loading;
+ late Taable? taable;
 
+  @override
+  void initState() {
+    super.initState();
+    _loading = false;
+    getTable();
+    // get();
+  }
+
+
+
+  Future getTable() async{
+    setState(() {
+      _loading = true;
+    });
+    var headers = {
+      'X-Auth-Token': 'ed2bac5181fc4d75aa46cddca9c3acbe',
+      'x-rapidapi-host': 'v3.football.api-sports.io'
+    };
+    var request = http.Request('GET', Uri.parse('https://api.football-data.org/v4/competitions/PL/standings'));
+
+    request.headers.addAll(headers);
+
+
+    http.StreamedResponse streamedresponse = await request.send();
+    var response = await http.Response.fromStream(streamedresponse);
+    if (response.statusCode == 200) {
+      print(await response.body);
+      taable = taableFromJson(response.body);
+     print (taable!.standings.length);
+      print ("taable!.standings.length");
+
+      setState(() {
+        _loading = false;
+      });
+    } else {
+      print(response.statusCode);
+    }
+
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -82,19 +125,13 @@ class _leagueDetailsState extends State<leagueDetails> {
                 height: 300,
                 child: TabBarView(children: [
                   Container(
-                      child: ListView(
+                      child: ListView.builder(
+                        itemCount: 4,
                           physics: const BouncingScrollPhysics(
                               parent: AlwaysScrollableScrollPhysics()),
-                          children: [
-                            matchLabel(home:"Barcelona",homelogo: "asset/baca.png",homescore:'4',awayscore: '2',awaylogo:"asset/manc.png", away: "Man City"),
-                            matchLabel(home:"Liverpool",homelogo: "asset/liver.png",homescore:'2',awayscore: '0',awaylogo:"asset/chaci.png", away: "Chelsea"),
-                            matchLabel(home:"PSG",homelogo: "asset/psg.png",homescore:'1',awayscore: '1',awaylogo:"asset/baca.png", away: "Bacelona"),
-                            matchLabel(home:"Arsenal",homelogo: "asset/asna.png",homescore:'0',awayscore: '0',awaylogo:"asset/manu.png", away: "Man United"),
-                            matchLabel(home:"Bayern",homelogo: "asset/baya.png",homescore:'6',awayscore: '3',awaylogo:"asset/liver.png", away: "Liverpool"),
-                            matchLabel(home:"Chelsea",homelogo: "asset/chaci.png",homescore:'0',awayscore: '1',awaylogo:"asset/psg.png", away: "PSG"),
-                            matchLabel(home:"Man City",homelogo: "asset/manc.png",homescore:'2',awayscore: '2',awaylogo:"asset/asna.png", away: "Arsenal"),
-                            matchLabel(home:"Man United",homelogo: "asset/manu.png",homescore:'0',awayscore: '0',awaylogo:"asset/baya.png", away: "Bayern"),
-                      ])),
+                          itemBuilder: (BuildContext context, int index){
+                          return matchLabel(home:"Barcelona",homelogo: "asset/baca.png",homescore:'4',awayscore: '2',awaylogo:"asset/manc.png", away: "Man City");
+                          },)),
                   Container(
                     decoration: BoxDecoration(),
                     child: ListView(
@@ -146,170 +183,190 @@ class _leagueDetailsState extends State<leagueDetails> {
                                 ),
                               )
                             ],
-                            rows: <DataRow>[
-                              DataRow(
-                                cells: <DataCell>[
-                                  DataCell(Text('1')),
-                                  DataCell(Container(
-                                    width: 200,
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.start,
-                                      children: [
-                                        Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 8.0),
-                                          child: Image.asset(
-                                            "asset/manc.png",
-                                          ),
-                                        ),
-                                        Text('Manchester City')
-                                      ],
-                                    ),
-                                  )),
-                                  DataCell(Text('34')),
-                                  DataCell(Text('26')),
-                                  DataCell(Text('5')),
-                                  DataCell(Text('3')),
-                                  DataCell(Text('63')),
-                                  DataCell(Text('83')),
-                                ],
-                              ),
-                              DataRow(
-                                cells: <DataCell>[
-                                  DataCell(Text('2')),
-                                  DataCell(Container(
-                                    width: 200,
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.start,
-                                      children: [
-                                        Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 8.0),
-                                          child: Image.asset(
-                                            "asset/liver.png",
-                                          ),
-                                        ),
-                                        Text('Liverpool')
-                                      ],
-                                    ),
-                                  )),
-                                  DataCell(Text('34')),
-                                  DataCell(Text('25')),
-                                  DataCell(Text('7')),
-                                  DataCell(Text('2')),
-                                  DataCell(Text('64')),
-                                  DataCell(Text('82')),
-                                ],
-                              ),
-                              DataRow(
-                                cells: <DataCell>[
-                                  DataCell(Text('3')),
-                                  DataCell(Container(
-                                    width: 200,
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.start,
-                                      children: [
-                                        Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 8.0),
-                                          child: Image.asset(
-                                            "asset/chaci.png",
-                                          ),
-                                        ),
-                                        Text('Chelsea')
-                                      ],
-                                    ),
-                                  )),
-                                  DataCell(Text('34')),
-                                  DataCell(Text('19')),
-                                  DataCell(Text('9')),
-                                  DataCell(Text('6')),
-                                  DataCell(Text('68')),
-                                  DataCell(Text('66')),
-                                ],
-                              ),
-                              DataRow(
-                                cells: <DataCell>[
-                                  DataCell(Text('4')),
-                                  DataCell(Container(
-                                    width: 200,
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.start,
-                                      children: [
-                                        Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 8.0),
-                                          child: Image.asset(
-                                            "asset/asna.png",
-                                          ),
-                                        ),
-                                        Text('Arsenal')
-                                      ],
-                                    ),
-                                  )),
-                                  DataCell(Text('34')),
-                                  DataCell(Text('20')),
-                                  DataCell(Text('3')),
-                                  DataCell(Text('11')),
-                                  DataCell(Text('13')),
-                                  DataCell(Text('63')),
-                                ],
-                              ),
-                              DataRow(
-                                cells: <DataCell>[
-                                  DataCell(Text('5')),
-                                  DataCell(Container(
-                                    width: 200,
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.start,
-                                      children: [
-                                        Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 8.0),
-                                          child: Image.asset(
-                                            "asset/manu.png",
-                                          ),
-                                        ),
-                                        Text('Manchester United')
-                                      ],
-                                    ),
-                                  )),
-                                  DataCell(Text('34')),
-                                  DataCell(Text('16')),
-                                  DataCell(Text('10')),
-                                  DataCell(Text('10')),
-                                  DataCell(Text('7')),
-                                  DataCell(Text('58')),
-                                ],
-                              ),
-                              DataRow(
-                                cells: <DataCell>[
-                                  DataCell(Text('6')),
-                                  DataCell(Container(
-                                    width: 200,
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.start,
-                                      children: [
-                                        Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 8.0),
-                                          child: Image.asset(
-                                            "asset/baca.png",
-                                          ),
-                                        ),
-                                        Text('Barcelona')
-                                      ],
-                                    ),
-                                  )),
-                                  DataCell(Text('34')),
-                                  DataCell(Text('26')),
-                                  DataCell(Text('5')),
-                                  DataCell(Text('3')),
-                                  DataCell(Text('63')),
-                                  DataCell(Text('83')),
-                                ],
-                              ),
-                            ],
+                            rows: List.generate(1, (index) {
+                              // final y = taable.standings[index].customer.firstname +
+                              //     " " +
+                              //     loans.results[index].customer.lastname;
+                              //
+                              // final x = loans.results[index].loanParticulars.amountApplied;
+                              // final z = loans.results[index].stage.name;
+                              // final w = loans.results[index].loanApplicationStatus.name;
+
+                              return DataRow(cells: [
+                                DataCell(Container(width: 75, child: Text(taable.standings[index].table[index].position))),
+                                DataCell(Container(child: Text("x"))),
+                                DataCell(Container(child: Text('w'))),
+                                DataCell(Container(child: Text("z"))),
+                                DataCell(Container(width: 75, child: Text("y"))),
+                                DataCell(Container(child: Text("x"))),
+                                DataCell(Container(child: Text('w'))),
+                                DataCell(Container(child: Text("z")))
+                              ]);
+                            }),
+                            // rows: <DataRow>[
+                            //   DataRow(
+                            //     cells: <DataCell>[
+                            //       DataCell(Text('1')),
+                            //       DataCell(Container(
+                            //         width: 200,
+                            //         child: Row(
+                            //           mainAxisAlignment: MainAxisAlignment.start,
+                            //           children: [
+                            //             Padding(
+                            //               padding: EdgeInsets.symmetric(
+                            //                   horizontal: 8.0),
+                            //               child: Image.asset(
+                            //                 "asset/manc.png",
+                            //               ),
+                            //             ),
+                            //             Text('Manchester City')
+                            //           ],
+                            //         ),
+                            //       )),
+                            //       DataCell(Text('34')),
+                            //       DataCell(Text('26')),
+                            //       DataCell(Text('5')),
+                            //       DataCell(Text('3')),
+                            //       DataCell(Text('63')),
+                            //       DataCell(Text('83')),
+                            //     ],
+                            //   ),
+                            //   DataRow(
+                            //     cells: <DataCell>[
+                            //       DataCell(Text('2')),
+                            //       DataCell(Container(
+                            //         width: 200,
+                            //         child: Row(
+                            //           mainAxisAlignment: MainAxisAlignment.start,
+                            //           children: [
+                            //             Padding(
+                            //               padding: EdgeInsets.symmetric(
+                            //                   horizontal: 8.0),
+                            //               child: Image.asset(
+                            //                 "asset/liver.png",
+                            //               ),
+                            //             ),
+                            //             Text('Liverpool')
+                            //           ],
+                            //         ),
+                            //       )),
+                            //       DataCell(Text('34')),
+                            //       DataCell(Text('25')),
+                            //       DataCell(Text('7')),
+                            //       DataCell(Text('2')),
+                            //       DataCell(Text('64')),
+                            //       DataCell(Text('82')),
+                            //     ],
+                            //   ),
+                            //   DataRow(
+                            //     cells: <DataCell>[
+                            //       DataCell(Text('3')),
+                            //       DataCell(Container(
+                            //         width: 200,
+                            //         child: Row(
+                            //           mainAxisAlignment: MainAxisAlignment.start,
+                            //           children: [
+                            //             Padding(
+                            //               padding: EdgeInsets.symmetric(
+                            //                   horizontal: 8.0),
+                            //               child: Image.asset(
+                            //                 "asset/chaci.png",
+                            //               ),
+                            //             ),
+                            //             Text('Chelsea')
+                            //           ],
+                            //         ),
+                            //       )),
+                            //       DataCell(Text('34')),
+                            //       DataCell(Text('19')),
+                            //       DataCell(Text('9')),
+                            //       DataCell(Text('6')),
+                            //       DataCell(Text('68')),
+                            //       DataCell(Text('66')),
+                            //     ],
+                            //   ),
+                            //   DataRow(
+                            //     cells: <DataCell>[
+                            //       DataCell(Text('4')),
+                            //       DataCell(Container(
+                            //         width: 200,
+                            //         child: Row(
+                            //           mainAxisAlignment: MainAxisAlignment.start,
+                            //           children: [
+                            //             Padding(
+                            //               padding: EdgeInsets.symmetric(
+                            //                   horizontal: 8.0),
+                            //               child: Image.asset(
+                            //                 "asset/asna.png",
+                            //               ),
+                            //             ),
+                            //             Text('Arsenal')
+                            //           ],
+                            //         ),
+                            //       )),
+                            //       DataCell(Text('34')),
+                            //       DataCell(Text('20')),
+                            //       DataCell(Text('3')),
+                            //       DataCell(Text('11')),
+                            //       DataCell(Text('13')),
+                            //       DataCell(Text('63')),
+                            //     ],
+                            //   ),
+                            //   DataRow(
+                            //     cells: <DataCell>[
+                            //       DataCell(Text('5')),
+                            //       DataCell(Container(
+                            //         width: 200,
+                            //         child: Row(
+                            //           mainAxisAlignment: MainAxisAlignment.start,
+                            //           children: [
+                            //             Padding(
+                            //               padding: EdgeInsets.symmetric(
+                            //                   horizontal: 8.0),
+                            //               child: Image.asset(
+                            //                 "asset/manu.png",
+                            //               ),
+                            //             ),
+                            //             Text('Manchester United')
+                            //           ],
+                            //         ),
+                            //       )),
+                            //       DataCell(Text('34')),
+                            //       DataCell(Text('16')),
+                            //       DataCell(Text('10')),
+                            //       DataCell(Text('10')),
+                            //       DataCell(Text('7')),
+                            //       DataCell(Text('58')),
+                            //     ],
+                            //   ),
+                            //   DataRow(
+                            //     cells: <DataCell>[
+                            //       DataCell(Text('6')),
+                            //       DataCell(Container(
+                            //         width: 200,
+                            //         child: Row(
+                            //           mainAxisAlignment: MainAxisAlignment.start,
+                            //           children: [
+                            //             Padding(
+                            //               padding: EdgeInsets.symmetric(
+                            //                   horizontal: 8.0),
+                            //               child: Image.asset(
+                            //                 "asset/baca.png",
+                            //               ),
+                            //             ),
+                            //             Text('Barcelona')
+                            //           ],
+                            //         ),
+                            //       )),
+                            //       DataCell(Text('34')),
+                            //       DataCell(Text('26')),
+                            //       DataCell(Text('5')),
+                            //       DataCell(Text('3')),
+                            //       DataCell(Text('63')),
+                            //       DataCell(Text('83')),
+                            //     ],
+                            //   ),
+                            // ],
                           ),
                         )
                       ],

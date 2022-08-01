@@ -1,11 +1,9 @@
-import 'dart:convert';
-import 'dart:typed_data';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:soccerrank/api/classs.dart';
-import 'package:soccerrank/screens/league%20details.dart';
+import 'package:soccerrank/screens/leaguedetails.dart';
 import 'package:soccerrank/style/colors.dart';
 import 'package:soccerrank/style/styles.dart';
 import 'package:http/http.dart' as http;
@@ -25,42 +23,44 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
-    // _loading = false;
-    // getLeague();
+    _loading = false;
+    getLeague();
     // get();
   }
 
-  // late bool _loading;
-  // late Leagues leagues;
+  late bool _loading;
+  late Leagues leagues;
+  late Taable taable;
 
-  // Future getLeague() async{
-  //   setState(() {
-  //     _loading = true;
-  //   });
-  //   var headers = {
-  //     'X-Auth-Token': 'ed2bac5181fc4d75aa46cddca9c3acbe',
-  //     'x-rapidapi-host': 'v3.football.api-sports.io'
-  //   };
-  //   var request = http.Request('GET', Uri.parse('https://api.football-data.org/v4/competitions/'));
-  //
-  //   request.headers.addAll(headers);
-  //
-  //
-  //   http.StreamedResponse streamedresponse = await request.send();
-  //   var response = await http.Response.fromStream(streamedresponse);
-  //   if (response.statusCode == 200) {
-  //     print(await response.body);
-  //     leagues = leaguesFromJson(response.body);
-  //     print (leagues.competitions.length);
-  //
-  //     setState(() {
-  //       _loading = false;
-  //     });
-  //   } else {
-  //     print(response.statusCode);
-  //   }
-  //
-  // }
+  Future getLeague() async{
+    setState(() {
+      _loading = true;
+    });
+    var headers = {
+      'X-Auth-Token': 'ed2bac5181fc4d75aa46cddca9c3acbe',
+      'x-rapidapi-host': 'v3.football.api-sports.io'
+    };
+    var request = http.Request('GET', Uri.parse('https://api.football-data.org/v4/competitions/'));
+
+    request.headers.addAll(headers);
+
+
+    http.StreamedResponse streamedresponse = await request.send();
+    var response = await http.Response.fromStream(streamedresponse);
+    if (response.statusCode == 200) {
+      print(await response.body);
+      leagues = leaguesFromJson(response.body);
+      print (leagues.competitions.length);
+
+      setState(() {
+        _loading = false;
+      });
+    } else {
+      print(response.statusCode);
+    }
+
+  }
+
 
 
   @override
